@@ -50,9 +50,8 @@ namespace Coin {
             this.get_style_context ().add_class ("rounded");
             this.window_position = Gtk.WindowPosition.CENTER;
 
-            get_values();
             make_ui ();
-            Timeout.add_seconds (3600, get_values);
+            Timeout.add_seconds (3, get_values);
 
             var settings = AppSettings.get_default ();
 
@@ -76,13 +75,13 @@ namespace Coin {
         }
 
         public void make_ui () {
+            get_values ();
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             label_result = new Gtk.Label ("");
             label_info = new Gtk.Label ("");
-            label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
-            label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
             label_info.set_halign (Gtk.Align.END);
+            set_labels ();
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
@@ -122,9 +121,14 @@ namespace Coin {
             } catch (Error e) {
                 warning (e.message);
             }
+            set_labels ();
 
             return true;
         }
 
+        public void set_labels () {
+            label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
+            label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
+        }
     }
 }
