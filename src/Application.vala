@@ -28,9 +28,9 @@ namespace Coin {
 
         protected override void activate () {
             if (get_windows ().length () > 0) {
-                        get_windows ().data.present ();
-                        return;
-                    }
+                get_windows ().data.present ();
+                return;
+            }
 
             var app_window = new MainWindow (this);
             app_window.show ();

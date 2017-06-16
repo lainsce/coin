@@ -20,13 +20,13 @@
 namespace Coin.Stylesheet {
     public const string BODY = """
         @define-color colorPrimary #e8f3e4;
-        @define-color textColorPrimary #080d06;
+        @define-color textColorPrimary #18330e;
         @define-color bg_highlight_color shade (@colorPrimary, 1.4);
 
         .titlebar,
         .background {
             background-color: @colorPrimary;
-            color: #080d06;
+            color: @textColorPrimary;
             icon-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
             text-shadow: 0 1px 1px shade (@colorPrimary, 0.82);
         }

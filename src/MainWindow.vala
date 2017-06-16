@@ -22,7 +22,7 @@ using Json;
 namespace Coin {
     public class MainWindow : Gtk.Dialog {
         public MainWindow (Gtk.Application application) {
-            Object (application: application,
+            GLib.Object (application: application,
                     icon_name: "com.github.lainsce.coin",
                     resizable: false,
                     title: _("Coin"),
@@ -37,6 +37,9 @@ namespace Coin {
         }
 
         construct {
+            set_keep_below (true);
+            stick ();
+
             this.get_style_context ().add_class ("rounded");
             this.window_position = Gtk.WindowPosition.CENTER;
 
@@ -45,22 +48,29 @@ namespace Coin {
             var message = new Soup.Message ("GET", uri);
             session.send_message (message);
             var label_result = new Gtk.Label ("0.00");
+            var label_info = new Gtk.Label ("Data collected hourly.");
+            label_info.set_halign (Gtk.Align.END);
             try {
                 var parser = new Json.Parser ();
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                 var root_object = parser.get_root ().get_object();
-                var avg = root_object.get_object_member ("avg");
-                label_result.set_markup ("""<span font="36">%s</span>""".printf(avg.to_string()));
+                var response = root_object.get_object_member ("ticker");
+                var avg = response.get_double_member("avg");
+                label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
             } catch (Error e) {
                 warning (e.message);
             }
+
+            var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
             grid.margin_bottom = 6;
             grid.margin_end = 18;
             grid.margin_start = 18;
+            grid.attach (icon, 0, 0, 2, 2);
             grid.attach (label_result, 2, 0, 1, 1);
+            grid.attach (label_info, 2, 1, 1, 1);
 
             var stack = new Gtk.Stack ();
             stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
