@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Coin
+Comment=Track your currency values
+Exec=com.github.lainsce.coin
+Icon=com.github.lainsce.coin
+Keywords=Money;Finance;Tracker
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GTK;Office;

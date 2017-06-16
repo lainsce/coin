@@ -1,0 +1,10 @@
+build/
+~*
+*~
+debian/com.github.lainsce.coin.debhelper.log
+debian/com.github.lainsce.coin.substvars
+debian/com.github.lainsce.coin/
+debian/debhelper-build-stamp
+debian/files
+obj-x86_64-linux-gnu/
+po/*.po

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.github.lainsce.coin.desktop</id>
+    <metadata_license>CC0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name>coin</name>
+    <summary>Track currencies</summary>
+    <description>
+        <p>Track any world currency you want, and display it in a handy applet</p>
+        <ul>
+            <li>Quit anytime with the shortcut Ctrl + Q</li>
+            <li>Stays out of your way in the desktop</li>
+        </ul>
+    </description>
+    <provides>
+        <binary>com.github.lainsce.coin</binary>
+    </provides>
+    <developer_name>Lains</developer_name>
+    <url type="homepage">https://github.com/lainsce/coin/</url>
+    <url type="bugtracker">https://github.com/lainsce/coin/issues</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/lainsce/coin/master/data/shot.png</image>
+        </screenshot>
+    </screenshots>
+    <custom>
+        <value key="x-appcenter-color-primary">#badbad</value>
+        <value key="x-appcenter-color-primary-text">#212121</value>
+    </custom>
+</component>
