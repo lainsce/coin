@@ -4,9 +4,9 @@
     <metadata_license>CC0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>coin</name>
-    <summary>Track currencies</summary>
+    <summary>Track the Bitcoin currency in dollar value</summary>
     <description>
-        <p>Track any world currency you want, and display it in a handy applet</p>
+        <p>Track the Bitcoin currency value in dollars, and display it in a handy applet</p>
         <ul>
             <li>Quit anytime with the shortcut Ctrl + Q</li>
             <li>Stays out of your way in the desktop</li>

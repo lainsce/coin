@@ -1,5 +1,5 @@
 # ![icon](data/icon.png) Coin
-## Track any world currency.
+## Track the Bitcoin currency in dollar value.
 
 ![Screenshot](data/shot.png)
 
@@ -11,6 +11,8 @@ Please make sure you have these dependencies first before building.
 granite
 gtk+-3.0
 meson
+libsoup-2.4
+libjson0
 ```
 
 ## Building
