@@ -51,7 +51,10 @@ namespace Coin {
             this.window_position = Gtk.WindowPosition.CENTER;
 
             make_ui ();
-            Timeout.add_seconds (3, get_values);
+            Timeout.add_seconds (3600, () => {
+                get_values ();
+                return false;
+            });
 
             var settings = AppSettings.get_default ();
 
@@ -74,14 +77,13 @@ namespace Coin {
             return false;
         }
 
-        public void make_ui () {
+        public async void make_ui () {
             get_values ();
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             label_result = new Gtk.Label ("");
             label_info = new Gtk.Label ("");
             label_info.set_halign (Gtk.Align.END);
-            set_labels ();
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
