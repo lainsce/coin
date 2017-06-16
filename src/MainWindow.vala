@@ -27,7 +27,8 @@ namespace Coin {
                     resizable: false,
                     title: _("Coin"),
                     height_request: 272,
-                    width_request: 500);
+                    width_request: 500
+            );
 
             Granite.Widgets.Utils.set_theming_for_screen (
                 this.get_screen (),
@@ -43,44 +44,7 @@ namespace Coin {
             this.get_style_context ().add_class ("rounded");
             this.window_position = Gtk.WindowPosition.CENTER;
 
-            var uri = "https://btc-e.com/api/2/btc_usd/ticker";
-            var session = new Soup.Session ();
-            var message = new Soup.Message ("GET", uri);
-            session.send_message (message);
-            var label_result = new Gtk.Label ("0.00");
-            var label_info = new Gtk.Label ("Data collected hourly.");
-            label_info.set_halign (Gtk.Align.END);
-            try {
-                var parser = new Json.Parser ();
-                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
-                var root_object = parser.get_root ().get_object();
-                var response = root_object.get_object_member ("ticker");
-                var avg = response.get_double_member("avg");
-                label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
-            } catch (Error e) {
-                warning (e.message);
-            }
-
-            var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
-
-            var grid = new Gtk.Grid ();
-            grid.column_spacing = 12;
-            grid.margin_bottom = 6;
-            grid.margin_end = 18;
-            grid.margin_start = 18;
-            grid.attach (icon, 0, 0, 2, 2);
-            grid.attach (label_result, 2, 0, 1, 1);
-            grid.attach (label_info, 2, 1, 1, 1);
-
-            var stack = new Gtk.Stack ();
-            stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            stack.vhomogeneous = true;
-            stack.add_named (grid, "money");
-
-            var content_box = get_content_area () as Gtk.Box;
-            content_box.border_width = 0;
-            content_box.add (stack);
-            content_box.show_all ();
+            make_ui ();
 
             var settings = AppSettings.get_default ();
 
@@ -101,6 +65,51 @@ namespace Coin {
             settings.window_y = y;
 
             return false;
+        }
+
+        public void make_ui () {
+            var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
+
+            var uri = "https://btc-e.com/api/2/btc_usd/ticker";
+            var session = new Soup.Session ();
+            var message = new Soup.Message ("GET", uri);
+            session.send_message (message);
+            var label_result = new Gtk.Label ("0.00");
+            var label_info = new Gtk.Label ("");
+            label_info.set_halign (Gtk.Align.END);
+            try {
+                var parser = new Json.Parser ();
+                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                var root_object = parser.get_root ().get_object();
+                var response = root_object.get_object_member ("ticker");
+                var avg = response.get_double_member("avg");
+                var timestamp = response.get_int_member("updated");
+                var datetime = new DateTime.from_unix_local (timestamp).format ("%m/%d/%y %H:%M");
+                var time = datetime.to_string();
+                label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
+                label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
+            } catch (Error e) {
+                warning (e.message);
+            }
+
+            var grid = new Gtk.Grid ();
+            grid.column_spacing = 12;
+            grid.margin_bottom = 6;
+            grid.margin_end = 18;
+            grid.margin_start = 18;
+            grid.attach (icon, 0, 0, 2, 2);
+            grid.attach (label_result, 2, 0, 1, 1);
+            grid.attach (label_info, 2, 1, 1, 1);
+
+            var stack = new Gtk.Stack ();
+            stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            stack.vhomogeneous = true;
+            stack.add_named (grid, "money");
+
+            var content_box = get_content_area () as Gtk.Box;
+            content_box.border_width = 0;
+            content_box.add (stack);
+            content_box.show_all ();
         }
     }
 }
