@@ -88,13 +88,12 @@ namespace Coin {
             set_labels ();
 
             var grid = new Gtk.Grid ();
-            grid.column_spacing = 12;
-            grid.margin_bottom = 6;
-            grid.margin_end = 18;
+            grid.column_spacing = 18;
+            grid.margin_end = 6;
             grid.margin_start = 18;
             grid.attach (icon, 0, 0, 1, 2);
-            grid.attach (label_result, 2, 0, 1, 1);
-            grid.attach (label_info, 2, 1, 1, 1);
+            grid.attach (label_result, 3, 0, 2, 1);
+            grid.attach (label_info, 3, 1, 2, 1);
 
             var stack = new Gtk.Stack ();
             stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -131,7 +130,7 @@ namespace Coin {
         }
 
         public void set_labels () {
-            label_result.set_markup ("""<span font="36">$%.2f</span><span font="16">/1 BTC</span>""".printf(avg));
+            label_result.set_markup ("""<span font="30">$%.2f</span><span font="16">/1 BTC</span>""".printf(avg));
             label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
         }
     }
