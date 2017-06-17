@@ -83,6 +83,7 @@ namespace Coin {
             label_result = new Gtk.Label ("");
             label_info = new Gtk.Label ("");
             label_info.set_halign (Gtk.Align.END);
+            set_labels ();
 
             var grid = new Gtk.Grid ();
             grid.column_spacing = 12;
