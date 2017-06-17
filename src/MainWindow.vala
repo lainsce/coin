@@ -63,6 +63,14 @@ namespace Coin {
             if (x != -1 && y != -1) {
                 move (x, y);
             }
+
+            button_press_event.connect ((e) => {
+                if (e.button == Gdk.BUTTON_PRIMARY) {
+                    begin_move_drag ((int) e.button, (int) e.x_root, (int) e.y_root, e.time);
+                    return true;
+                }
+                return false;
+            });
         }
 
         public override bool delete_event (Gdk.EventAny event) {
