@@ -3,7 +3,7 @@
     <id>com.github.lainsce.coin.desktop</id>
     <metadata_license>CC0</metadata_license>
     <project_license>GPL-3.0+</project_license>
-    <name>coin</name>
+    <name>Coin</name>
     <summary>Track the Bitcoin currency in dollar value</summary>
     <description>
         <p>Track the Bitcoin currency value in dollars, and display it in a handy applet</p>
