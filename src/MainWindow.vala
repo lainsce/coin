@@ -81,7 +81,9 @@ namespace Coin {
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             label_result = new Gtk.Label ("");
+            label_result.margin_top = 12;
             label_info = new Gtk.Label ("");
+            label_result.margin_top = 6;
             label_info.set_halign (Gtk.Align.END);
             set_labels ();
 
@@ -90,7 +92,7 @@ namespace Coin {
             grid.margin_bottom = 6;
             grid.margin_end = 18;
             grid.margin_start = 18;
-            grid.attach (icon, 0, 0, 1, 1);
+            grid.attach (icon, 0, 0, 1, 2);
             grid.attach (label_result, 2, 0, 1, 1);
             grid.attach (label_info, 2, 1, 1, 1);
 
@@ -129,7 +131,7 @@ namespace Coin {
         }
 
         public void set_labels () {
-            label_result.set_markup ("""<span font="36">$%.2f</span><span font="14">/1 BTC</span>""".printf(avg));
+            label_result.set_markup ("""<span font="36">$%.2f</span><span font="16">/1 BTC</span>""".printf(avg));
             label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
         }
     }
