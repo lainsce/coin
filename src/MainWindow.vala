@@ -53,7 +53,6 @@ namespace Coin {
             make_ui ();
             Timeout.add_seconds (3600, () => {
                 get_values ();
-                return false;
             });
 
             var settings = AppSettings.get_default ();
