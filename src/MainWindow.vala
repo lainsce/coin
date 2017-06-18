@@ -24,11 +24,11 @@ namespace Coin {
         public Gtk.Label label_result;
         public Gtk.Label label_info;
         public Gtk.Label label_eth_result;
+        public Gtk.ComboBoxText base_currency;
+        public Gtk.ComboBoxText base_vcurrency;
 
         public double avg;
         public string time;
-        public double eth_avg;
-        public string eth_time;
 
         public MainWindow (Gtk.Application application) {
             GLib.Object (application: application,
@@ -54,7 +54,7 @@ namespace Coin {
             this.window_position = Gtk.WindowPosition.CENTER;
 
             make_ui ();
-            Timeout.add_seconds (3600, () => {
+            Timeout.add_seconds (10, () => {
                 get_values ();
             });
 
@@ -91,26 +91,41 @@ namespace Coin {
             get_values ();
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
+            base_currency = new Gtk.ComboBoxText();
+		    base_currency.append_text("BRL");
+		    base_currency.append_text("CAD");
+		    base_currency.append_text("EUR");
+		    base_currency.append_text("GBP");
+		    base_currency.append_text("USD");
+		    base_currency.set_active(4);
+		    base_currency.margin = 6;
+
+            base_vcurrency = new Gtk.ComboBoxText();
+		    base_vcurrency.append_text("BTC");
+		    base_vcurrency.append_text("ETH");
+		    base_vcurrency.append_text("DASH");
+		    base_vcurrency.append_text("ZEC");
+		    base_vcurrency.append_text("LTC");
+		    base_vcurrency.set_active(0);
+		    base_vcurrency.margin = 6;
+
             label_result = new Gtk.Label ("");
-            label_result.margin_top = 8;
+            label_result.set_markup ("""<span font="32">0000.00</span>""");
             label_result.set_halign (Gtk.Align.END);
             label_info = new Gtk.Label ("");
+            label_info.set_markup ("""<span font="10">Updated every 10 seconds</span>""");
             label_info.set_halign (Gtk.Align.END);
 
-            label_eth_result = new Gtk.Label ("");
-            label_eth_result.margin_top = 3;
-            label_eth_result.set_halign (Gtk.Align.END);
-            set_labels ();
-
             var grid = new Gtk.Grid ();
-            grid.column_spacing = 18;
+            grid.column_spacing = 40;
             grid.margin_start = 18;
             grid.margin_end = 6;
             grid.margin_bottom = 6;
-            grid.attach (icon, 0, 0, 1, 4);
-            grid.attach (label_result, 2, 0, 2, 1);
-            grid.attach (label_eth_result, 2, 2, 2, 1);
-            grid.attach (label_info, 2, 3, 2, 1);
+            grid.attach (icon, 0, 1, 1, 1);
+            grid.attach (label_result, 1, 1, 2, 1);
+            grid.attach (label_info, 1, 4, 2, 1);
+            grid.attach (base_currency,0,4,1,1);
+            grid.attach (base_vcurrency,0,0,1,1);
 
             var stack = new Gtk.Stack ();
             stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -124,43 +139,38 @@ namespace Coin {
         }
 
         public bool get_values () {
-            var uri = "https://btc-e.com/api/2/btc_usd/ticker";
-            var eth_uri = "https://btc-e.com/api/2/eth_usd/ticker";
+            var curname = base_currency.get_active_text();
+            var vcurname = base_vcurrency.get_active_text();
+            var uri = """https://min-api.cryptocompare.com/data/pricemultifull?fsyms=%s&tsyms=%s""".printf(vcurname, curname);
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
-            var eth_message = new Soup.Message ("GET", eth_uri);
             session.send_message (message);
-            session.send_message (eth_message);
 
             try {
-                // Bitcoin
+                base_currency.changed.connect (() => {
+				        curname = base_currency.get_active_text();
+			    });
+                base_vcurrency.changed.connect (() => {
+				        vcurname = base_vcurrency.get_active_text();
+			    });
                 var parser = new Json.Parser ();
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                 var root_object = parser.get_root ().get_object();
-                var response = root_object.get_object_member ("ticker");
-                avg = response.get_double_member("avg");
-                var timestamp = response.get_int_member("updated");
-                var datetime = new DateTime.from_unix_local (timestamp).format ("%m/%d/%y %H:%M");
-                time = datetime.to_string();
-
-                // Ethereum
-                var eth_parser = new Json.Parser ();
-                eth_parser.load_from_data ((string) eth_message.response_body.flatten ().data, -1);
-                var eth_root_object = eth_parser.get_root ().get_object();
-                var eth_response = eth_root_object.get_object_member ("ticker");
-                eth_avg = eth_response.get_double_member("avg");
+                var response_object = root_object.get_object_member ("RAW");
+                var from_object = response_object.get_object_member ("%s".printf(vcurname));
+                var to_object = from_object.get_object_member ("%s".printf(curname));
+                avg = to_object.get_double_member("PRICE");
             } catch (Error e) {
                 warning (e.message);
             }
-            set_labels ();
 
+            set_labels ();
             return true;
         }
 
         public void set_labels () {
-            label_result.set_markup ("""<span font="32">$%.2f</span><span font="12">/1 BTC</span>""".printf(avg));
-            label_info.set_markup ("""<span font="10">Updated on: %s</span>""".printf(time));
-            label_eth_result.set_markup ("""<span font="32">$%.2f</span><span font="12">/1 ETH</span>""".printf(eth_avg));
+            label_result.set_markup ("""<span font="32">%.2f</span>""".printf(avg));
+            label_info.set_markup ("""<span font="10">Updated every 10 seconds</span>""");
         }
     }
 }

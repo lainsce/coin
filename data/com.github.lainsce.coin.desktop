@@ -1,10 +1,10 @@
 [Desktop Entry]
 Name=Coin
-Comment=Track your currency values
+Comment=Track the virtual currencies in real world currency value
 Exec=com.github.lainsce.coin
 Icon=com.github.lainsce.coin
-Keywords=Money;Finance;Tracker;Bitcoin;
+Keywords=Money;Finance;Tracker;Bitcoin;Cryptocurrency;
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Office;
+Categories=GTK;Utility;Office;

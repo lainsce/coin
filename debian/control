@@ -14,4 +14,4 @@ Standards-Version: 3.9.3
 Package: com.github.lainsce.coin
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Track the Bitcoin or Ethereum currency in dollar value.
+Description: Track the virtual currencies in real world currency value.

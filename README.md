@@ -1,5 +1,5 @@
 # ![icon](data/icon.png) Coin
-## Track the Bitcoin & Ethereum currencies in dollar value.
+## Track the virtual currencies in real world currency value.
 
 ![Screenshot](data/shot.png)
 
@@ -11,8 +11,8 @@ Please make sure you have these dependencies first before building.
 granite
 gtk+-3.0
 meson
-libsoup-2.4
-libjson0
+libsoup2.4
+libjson-glib
 ```
 
 ## Building
