@@ -92,40 +92,47 @@ namespace Coin {
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             base_currency = new Gtk.ComboBoxText();
+            base_currency.append_text("USD");
+            base_currency.append_text("EUR");
+            base_currency.append_text("GBP");
+            base_currency.append_text("AUD");
 		    base_currency.append_text("BRL");
 		    base_currency.append_text("CAD");
-		    base_currency.append_text("EUR");
-		    base_currency.append_text("GBP");
-		    base_currency.append_text("USD");
-		    base_currency.set_active(4);
+		    base_currency.append_text("CNY");
+		    base_currency.append_text("INR");
+		    base_currency.append_text("JPY");
+		    base_currency.append_text("RUB");
+		    base_currency.set_active(0);
 		    base_currency.margin = 6;
 
             base_vcurrency = new Gtk.ComboBoxText();
 		    base_vcurrency.append_text("BTC");
-		    base_vcurrency.append_text("ETH");
 		    base_vcurrency.append_text("DASH");
-		    base_vcurrency.append_text("ZEC");
+		    base_vcurrency.append_text("DGB");
+		    base_vcurrency.append_text("ETH");
 		    base_vcurrency.append_text("LTC");
+		    base_vcurrency.append_text("PPC");
+		    base_vcurrency.append_text("XRP");
+		    base_vcurrency.append_text("ZEC");
 		    base_vcurrency.set_active(0);
 		    base_vcurrency.margin = 6;
 
             label_result = new Gtk.Label ("");
-            label_result.set_markup ("""<span font="32">0000.00</span>""");
-            label_result.set_halign (Gtk.Align.END);
             label_info = new Gtk.Label ("");
-            label_info.set_markup ("""<span font="10">Updated every 10 seconds</span>""");
             label_info.set_halign (Gtk.Align.END);
+            get_values ();
+            set_labels ();
 
             var grid = new Gtk.Grid ();
-            grid.column_spacing = 40;
+            grid.column_spacing = 32;
             grid.margin_start = 18;
-            grid.margin_end = 6;
+            grid.margin_end = 18;
             grid.margin_bottom = 6;
             grid.attach (icon, 0, 1, 1, 1);
-            grid.attach (label_result, 1, 1, 2, 1);
-            grid.attach (label_info, 1, 4, 2, 1);
-            grid.attach (base_currency,0,4,1,1);
-            grid.attach (base_vcurrency,0,0,1,1);
+            grid.attach (label_result, 1, 1, 3, 1);
+            grid.attach (label_info, 1, 2, 3, 1);
+            grid.attach (base_currency, 0, 2, 1, 1);
+            grid.attach (base_vcurrency, 0, 0, 1, 1);
 
             var stack = new Gtk.Stack ();
             stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
@@ -147,12 +154,14 @@ namespace Coin {
             session.send_message (message);
 
             try {
+
                 base_currency.changed.connect (() => {
 				        curname = base_currency.get_active_text();
 			    });
                 base_vcurrency.changed.connect (() => {
 				        vcurname = base_vcurrency.get_active_text();
 			    });
+
                 var parser = new Json.Parser ();
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                 var root_object = parser.get_root ().get_object();
@@ -163,13 +172,45 @@ namespace Coin {
             } catch (Error e) {
                 warning (e.message);
             }
-
             set_labels ();
+
             return true;
         }
 
         public void set_labels () {
-            label_result.set_markup ("""<span font="32">%.2f</span>""".printf(avg));
+            var curr_symbol = "";
+            var curname = base_currency.get_active_text();
+            switch (curname) {
+                case "BRL":
+                    curr_symbol = "R$";
+                    break;
+                case "EUR":
+                    curr_symbol = "€";
+                    break;
+                case "GBP":
+                    curr_symbol = "£";
+                    break;
+                case "USD":
+                case "AUD":
+                case "CAD":
+                    curr_symbol = "$";
+                    break;
+                case "JPY":
+                case "CNY":
+                    curr_symbol = "¥";
+                    break;
+                case "RUB":
+                    curr_symbol = "₽";
+                    break;
+                case "INR":
+                    curr_symbol = "₹";
+                    break;
+                default:
+                    curr_symbol = "¤";
+                    break;
+            }
+
+            label_result.set_markup ("""<span font="22">%s</span> <span font="28">%.2f</span>""".printf(curr_symbol, avg));
             label_info.set_markup ("""<span font="10">Updated every 10 seconds</span>""");
         }
     }
