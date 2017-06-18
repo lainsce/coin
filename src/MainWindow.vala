@@ -26,6 +26,7 @@ namespace Coin {
         public Gtk.Label label_eth_result;
         public Gtk.ComboBoxText base_currency;
         public Gtk.ComboBoxText base_vcurrency;
+        public Gtk.Stack stack;
 
         public double avg;
         public string time;
@@ -54,9 +55,7 @@ namespace Coin {
             this.window_position = Gtk.WindowPosition.CENTER;
 
             make_ui ();
-            Timeout.add_seconds (10, () => {
-                get_values ();
-            });
+            Timeout.add_seconds (10, () => { get_values (); });
 
             var settings = AppSettings.get_default ();
 
@@ -88,7 +87,6 @@ namespace Coin {
         }
 
         public async void make_ui () {
-            get_values ();
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             base_currency = new Gtk.ComboBoxText();
@@ -118,7 +116,7 @@ namespace Coin {
 		    base_vcurrency.margin = 6;
 
             label_result = new Gtk.Label ("");
-            label_info = new Gtk.Label ("");
+            label_info = new Gtk.Label ("Updated every 10 seconds");
             label_info.set_halign (Gtk.Align.END);
             get_values ();
             set_labels ();
@@ -134,15 +132,26 @@ namespace Coin {
             grid.attach (base_currency, 0, 2, 1, 1);
             grid.attach (base_vcurrency, 0, 0, 1, 1);
 
-            var stack = new Gtk.Stack ();
+            stack = new Gtk.Stack ();
             stack.transition_type = Gtk.StackTransitionType.CROSSFADE;
             stack.vhomogeneous = true;
             stack.add_named (grid, "money");
+
 
             var content_box = get_content_area () as Gtk.Box;
             content_box.border_width = 0;
             content_box.add (stack);
             content_box.show_all ();
+
+            base_currency.changed.connect (() => {
+                get_values ();
+                set_labels ();
+            });
+
+            base_vcurrency.changed.connect (() => {
+                get_values ();
+                set_labels ();
+            });
         }
 
         public bool get_values () {
@@ -154,14 +163,6 @@ namespace Coin {
             session.send_message (message);
 
             try {
-
-                base_currency.changed.connect (() => {
-				        curname = base_currency.get_active_text();
-			    });
-                base_vcurrency.changed.connect (() => {
-				        vcurname = base_vcurrency.get_active_text();
-			    });
-
                 var parser = new Json.Parser ();
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
                 var root_object = parser.get_root ().get_object();
@@ -170,9 +171,8 @@ namespace Coin {
                 var to_object = from_object.get_object_member ("%s".printf(curname));
                 avg = to_object.get_double_member("PRICE");
             } catch (Error e) {
-                warning (e.message);
+                warning ("Failed to connect to service: %s", e.message);
             }
-            set_labels ();
 
             return true;
         }
@@ -210,8 +210,36 @@ namespace Coin {
                     break;
             }
 
-            label_result.set_markup ("""<span font="22">%s</span> <span font="28">%.2f</span>""".printf(curr_symbol, avg));
-            label_info.set_markup ("""<span font="10">Updated every 10 seconds</span>""");
+            var vcurr_symbol = "";
+            var vcurname = base_vcurrency.get_active_text();
+            switch (vcurname) {
+                case "BTC":
+                    vcurr_symbol = "Ƀ";
+                    break;
+                case "DASH":
+                    vcurr_symbol = "ⅅ";
+                    break;
+                case "DGB":
+                    vcurr_symbol = "Ð";
+                    break;
+                case "ETH":
+                    vcurr_symbol = "Ξ";
+                    break;
+                case "LTC":
+                    vcurr_symbol = "Ł";
+                    break;
+                case "PPC":
+                    vcurr_symbol = "þ";
+                    break;
+                case "XRP":
+                    vcurr_symbol = "Ʀ";
+                    break;
+                case "ZEC":
+                    vcurr_symbol = "ℨ";
+                    break;
+            }
+
+            label_result.set_markup ("""<span font="22">%s</span> <span font="28">%.2f</span> <span font="16">/ 1 %s</span>""".printf(curr_symbol, avg, vcurr_symbol));
         }
     }
 }
