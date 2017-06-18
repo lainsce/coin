@@ -19,18 +19,18 @@
 
 namespace Coin.Stylesheet {
     public const string BODY = """
-        @define-color colorPrimary #dcedd6;
+        @define-color colorPrimary #badbad;
         @define-color textColorPrimary #18330e;
-        @define-color bg_highlight_color shade (@colorPrimary, 1.4);
+        @define-color bg_highlight_color shade (@colorPrimary, 1.1);
 
         .titlebar,
         .background {
             background-color: @colorPrimary;
             background-image: none;
             border: none;
-            color: shade (@textColorPrimary, 0.8);
-            icon-shadow: 0 1px 1px shade (@colorPrimary, 0.52);
-            text-shadow: 0 1px 1px shade (@colorPrimary, 0.52);
+            color: @textColorPrimary;
+            icon-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
+            text-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
         }
 
         GtkDialog .window-frame {

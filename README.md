@@ -1,5 +1,5 @@
 # ![icon](data/icon.png) Coin
-## Track the Bitcoin currency in dollar value.
+## Track the Bitcoin & Ethereum currencies in dollar value.
 
 ![Screenshot](data/shot.png)
 

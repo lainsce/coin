@@ -4,11 +4,12 @@
     <metadata_license>CC0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Coin</name>
-    <summary>Track the Bitcoin currency in dollar value</summary>
+    <summary>Track the Bitcoin and Ethereum currencies in dollars</summary>
     <description>
-        <p>Track the Bitcoin currency value in dollars, and display it in a handy applet</p>
+        <p>Never miss out on the dollar value of a Bitcoin or an Ethereum with this handy applet</p>
         <ul>
             <li>Quit anytime with the shortcut Ctrl + Q</li>
+            <li>Move the applet by dragging it from anywhere in the window</li>
             <li>Stays out of your way in the desktop</li>
         </ul>
     </description>
