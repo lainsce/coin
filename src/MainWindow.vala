@@ -55,7 +55,10 @@ namespace Coin {
             this.window_position = Gtk.WindowPosition.CENTER;
 
             make_ui ();
-            Timeout.add_seconds (10, () => { get_values (); });
+            Timeout.add_seconds (10, () => {
+                get_values ();
+                set_labels ();
+            });
 
             var settings = AppSettings.get_default ();
 
