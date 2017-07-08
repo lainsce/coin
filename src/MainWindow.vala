@@ -115,6 +115,8 @@ namespace Coin {
 		    base_vcurrency.append_text("PPC");
 		    base_vcurrency.append_text("XRP");
 		    base_vcurrency.append_text("ZEC");
+            base_vcurrency.append_text("XMR");
+            base_vcurrency.append_text("DOGE");
 		    base_vcurrency.set_active(0);
 		    base_vcurrency.margin = 6;
 
@@ -239,6 +241,10 @@ namespace Coin {
                     break;
                 case "ZEC":
                     vcurr_symbol = "ℨ";
+                case "XMR":
+                    vcurr_symbol = "ɱ";
+                case "DOGE":
+                    vcurr_symbol = "D$";
                     break;
             }
 

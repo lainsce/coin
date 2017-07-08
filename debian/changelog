@@ -1,3 +1,21 @@
+com.github.lainsce.coin (1.1.3) xenial; urgency=low
+
+  * More currencies unveiled.
+
+ -- Lains <lainsce@airmail.cc>  Sat, 8 Jun 2017 03:11:00 -0300
+
+com.github.lainsce.coin (1.1.2) xenial; urgency=low
+
+  * New icons from Sam Hewitt.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 23 Jun 2017 12:52:00 -0300
+
+com.github.lainsce.coin (1.1.1) xenial; urgency=low
+
+  * Bump release for AppCenter monetizing feature.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 23 Jun 2017 01:52:00 -0300
+
 com.github.lainsce.coin (1.1.0) xenial; urgency=low
 
   * Bump release for AppCenter.
