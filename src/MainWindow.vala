@@ -241,8 +241,10 @@ namespace Coin {
                     break;
                 case "ZEC":
                     vcurr_symbol = "ℨ";
+                    break;
                 case "XMR":
                     vcurr_symbol = "ɱ";
+                    break;
                 case "DOGE":
                     vcurr_symbol = "D$";
                     break;
