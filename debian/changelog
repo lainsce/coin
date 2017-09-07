@@ -2,6 +2,7 @@ com.github.lainsce.coin (1.1.5) xenial; urgency=low
 
   * Enable Coin for i18n.
   * Add XAR coin.
+  * Add South African Rand.
 
  -- Lains <lainsce@airmail.cc>  Sat, 7 September 2017 02:43:00 -0300
 
