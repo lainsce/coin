@@ -103,6 +103,7 @@ namespace Coin {
 		    base_currency.append_text("INR");
 		    base_currency.append_text("JPY");
 		    base_currency.append_text("RUB");
+            base_currency.append_text("ZAR");
 		    base_currency.set_active(0);
 		    base_currency.margin = 6;
 
@@ -189,6 +190,9 @@ namespace Coin {
             switch (curname) {
                 case "BRL":
                     curr_symbol = "R$";
+                    break;
+                case "ZAR":
+                    curr_symbol = "R";
                     break;
                 case "EUR":
                     curr_symbol = "€";
