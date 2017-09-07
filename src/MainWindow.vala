@@ -190,6 +190,9 @@ namespace Coin {
                 case "BRL":
                     curr_symbol = "R$";
                     break;
+                case "ZAR":
+                    curr_symbol = "R";
+                    break;
                 case "EUR":
                     curr_symbol = "€";
                     break;
