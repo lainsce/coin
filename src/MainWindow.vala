@@ -121,7 +121,7 @@ namespace Coin {
 		    base_vcurrency.margin = 6;
 
             label_result = new Gtk.Label ("");
-            label_info = new Gtk.Label ("Updated every 10 seconds");
+            label_info = new Gtk.Label (_("Updated every 10 seconds"));
             label_info.set_halign (Gtk.Align.END);
             get_values ();
             set_labels ();

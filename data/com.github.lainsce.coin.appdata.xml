@@ -25,6 +25,17 @@
             <image>https://raw.githubusercontent.com/lainsce/coin/master/data/shot.png</image>
         </screenshot>
     </screenshots>
+    <releases>
+      <release version="1.1.5" date="2017-09-07">
+        <description>
+          <p>Release: Money Makes The World Go Round</p>
+          <ul>
+            <li>Enable Coin for translators</li>
+            <li>Add XAR coin.</li>
+          </ul>
+        </description>
+      </release>
+    </releases>
     <custom>
         <value key="x-appcenter-color-primary">#badbad</value>
         <value key="x-appcenter-color-primary-text">#212121</value>
