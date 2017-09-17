@@ -39,15 +39,12 @@ namespace Coin {
                     height_request: 272,
                     width_request: 500
             );
-
-            Granite.Widgets.Utils.set_theming_for_screen (
-                this.get_screen (),
-                Stylesheet.BODY,
-                Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
-            );
         }
 
         construct {
+            var provider = new Gtk.CssProvider ();
+            provider.load_from_resource ("/com/github/lainsce/coin/stylesheet.css");
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             set_keep_below (true);
             stick ();
 

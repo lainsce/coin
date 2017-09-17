@@ -26,6 +26,14 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.1.6" date="2017-09-17">
+        <description>
+          <p>Release: Style My Assets, Sir!</p>
+          <ul>
+            <li>Use GResources to load the GTK CSS Styling</li>
+          </ul>
+        </description>
+      </release>
       <release version="1.1.5" date="2017-09-07">
         <description>
           <p>Release: Money Makes The World Go Round</p>

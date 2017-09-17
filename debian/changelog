@@ -1,5 +1,11 @@
 com.github.lainsce.coin (1.1.5) xenial; urgency=low
 
+  * Load GTK CSS Stylesheet with GResource.
+
+ -- Lains <lainsce@airmail.cc>  Sun, 17 September 2017 03:33:00 -0300
+
+com.github.lainsce.coin (1.1.5) xenial; urgency=low
+
   * Enable Coin for i18n.
   * Add XAR coin.
   * Add South African Rand.
