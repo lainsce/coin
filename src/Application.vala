@@ -37,6 +37,9 @@ namespace Coin {
         }
 
         public static int main (string[] args) {
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.textdomain (Build.GETTEXT_PACKAGE);
+
             var app = new Coin.Application ();
             return app.run (args);
         }

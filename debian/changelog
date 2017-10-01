@@ -1,4 +1,10 @@
-com.github.lainsce.coin (1.1.5) xenial; urgency=low
+com.github.lainsce.coin (1.1.7) xenial; urgency=low
+
+  * Add Brazilian Portuguese translations.
+
+ -- Lains <lainsce@airmail.cc>  Sun, 1 October 2017 02:53:00 -0300
+
+com.github.lainsce.coin (1.1.6) xenial; urgency=low
 
   * Load GTK CSS Stylesheet with GResource.
 

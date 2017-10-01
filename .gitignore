@@ -7,4 +7,4 @@ debian/com.github.lainsce.coin/
 debian/debhelper-build-stamp
 debian/files
 obj-x86_64-linux-gnu/
-po/*.po
+po/*.mo
