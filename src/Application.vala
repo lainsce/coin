@@ -19,6 +19,7 @@
 */
 namespace Coin {
     public class Application : Gtk.Application {
+        public MainWindow app_window;
 
         public Application () {
             Object (flags: ApplicationFlags.FLAGS_NONE,
@@ -28,11 +29,11 @@ namespace Coin {
 
         protected override void activate () {
             if (get_windows ().length () > 0) {
-                get_windows ().data.present ();
+                app_window.present ();
                 return;
             }
 
-            var app_window = new MainWindow (this);
+            app_window = new MainWindow (this);
             app_window.show ();
         }
 

@@ -10,5 +10,15 @@
 			<summary>Window position</summary>
 			<description>The y axis of window position</description>
 		</key>
+        <key name="coin" type="s">
+			<default>""</default>
+			<summary>Last set currency</summary>
+			<description>The last set world currency</description>
+		</key>
+        <key name="virtualcoin" type="s">
+			<default>""</default>
+			<summary>Last set virtual coin</summary>
+			<description>The last set virtual coin</description>
+		</key>
 	</schema>
 </schemalist>

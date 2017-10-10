@@ -1,3 +1,10 @@
+com.github.lainsce.coin (1.1.8) xenial; urgency=low
+
+  * Remembers last used pair of coin/currency.
+  * Minor fixes in the front-end.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 13 October 2017 11:53:00 -0300
+
 com.github.lainsce.coin (1.1.7) xenial; urgency=low
 
   * Add Brazilian Portuguese translations.
