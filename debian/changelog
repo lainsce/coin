@@ -1,3 +1,10 @@
+com.github.lainsce.coin (1.1.9) xenial; urgency=low
+
+  * Remembers last used pair of coin/currency.
+  * Minor fixes in the front-end.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 20 October 2017 11:00:00 -0300
+
 com.github.lainsce.coin (1.1.8) xenial; urgency=low
 
   * Remembers last used pair of coin/currency.
