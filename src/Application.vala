@@ -18,7 +18,7 @@
 *
 */
 namespace Coin {
-    public class Application : Gtk.Application {
+    public class Application : Granite.Application {
         public MainWindow app_window;
 
         public Application () {
@@ -26,6 +26,11 @@ namespace Coin {
             application_id: "com.github.lainsce.coin");
         }
 
+        construct {
+            app_icon = "com.github.lainsce.coin";
+            exec_name = "com.github.lainsce.coin";
+            app_launcher = "com.github.lainsce.coin";
+        }
 
         protected override void activate () {
             if (get_windows ().length () > 0) {
@@ -34,7 +39,7 @@ namespace Coin {
             }
 
             app_window = new MainWindow (this);
-            app_window.show ();
+            app_window.show_all ();
         }
 
         public static int main (string[] args) {

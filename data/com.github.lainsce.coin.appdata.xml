@@ -30,6 +30,8 @@
             <description>
                 <p>Release: High Definition Money</p>
                 <ul>
+                    <li>Made the layout of the app more simple.</li>
+                    <li>Uses the full names of the coins &amp; currencies now.</li>
                     <li>Adds support for high definition icons.</li>
                 </ul>
             </description>

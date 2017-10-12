@@ -1,7 +1,7 @@
 com.github.lainsce.coin (1.1.9) xenial; urgency=low
 
-  * Remembers last used pair of coin/currency.
-  * Minor fixes in the front-end.
+  * Redesign of the app.
+  * Uses the full name of coins/currencies.
 
  -- Lains <lainsce@airmail.cc>  Fri, 20 October 2017 11:00:00 -0300
 
