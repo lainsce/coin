@@ -4,9 +4,9 @@
     <metadata_license>CC0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Coin</name>
-    <summary>Track the virtual currencies in real world currency value with this handy applet</summary>
+    <summary>Never miss out on the monetary value of a virtual currency with this handy applet</summary>
     <description>
-        <p>Never miss out on the value of a virtual currency with this handy applet</p>
+        <p>Track the virtual currencies in real world currency value with this handy applet</p>
         <ul>
             <li>Choose which currency and virtual currency to use for tracking</li>
             <li>Quit anytime with the shortcut Ctrl + Q</li>
