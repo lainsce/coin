@@ -1,5 +1,5 @@
 # ![icon](data/icon.png) Coin
-## Track the virtual currencies in real world currency value.
+## Track the virtual currencies in real world currency value with this handy applet.
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.lainsce.coin)
 
 ![Screenshot](data/shot.png)
