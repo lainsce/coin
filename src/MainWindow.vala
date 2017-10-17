@@ -68,7 +68,7 @@ namespace Coin {
 		    base_currency.append_text("Indian Ruppee");
 		    base_currency.append_text("Japanese Yen");
 		    base_currency.append_text("Russian Ruble");
-            base_currency.append_text("S. African Rand");
+            base_currency.append_text("South African Rand");
 		    base_currency.margin = 6;
 
             if (settings.coin == "US Dollar") {
@@ -101,7 +101,7 @@ namespace Coin {
             } else if (settings.coin == "Russian Ruble") {
                 base_currency.set_active(9);
                 coin_iso = "RUB";
-            } else if (settings.coin == "S. African Rand") {
+            } else if (settings.coin == "South African Rand") {
                 base_currency.set_active(10);
                 coin_iso = "ZAR";
             } else {
@@ -232,7 +232,7 @@ namespace Coin {
             settings.coin = base_currency.get_active_text();
             if (settings.coin == "Brazilian Real") {
                 coin_iso = "BRL";
-            } else if (settings.coin == "S. African Rand") {
+            } else if (settings.coin == "South African Rand") {
                 coin_iso = "ZAR";
             } else if (settings.coin == "Euro") {
                 coin_iso = "EUR";
