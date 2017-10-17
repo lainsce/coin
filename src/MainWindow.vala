@@ -116,7 +116,7 @@ namespace Coin {
 		    base_vcurrency.append_text("Litecoin");
 		    base_vcurrency.append_text("Peercoin");
 		    base_vcurrency.append_text("Ripple");
-		    base_vcurrency.append_text("Z-Cash");
+		    base_vcurrency.append_text("ZCash");
             base_vcurrency.append_text("Monero");
 		    base_vcurrency.margin = 6;
 
@@ -138,7 +138,7 @@ namespace Coin {
             } else if (settings.virtualcoin == "Ripple") {
                 base_vcurrency.set_active(5);
                 vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == "Z-Cash") {
+            } else if (settings.virtualcoin == "ZCash") {
                 base_vcurrency.set_active(6);
                 vcoin_iso = "ZEC";
             } else if (settings.virtualcoin == "Monero") {
@@ -269,7 +269,7 @@ namespace Coin {
                 vcoin_iso = "PPC";
             } else if (settings.virtualcoin == "Ripple") {
                 vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == "Z-Cash") {
+            } else if (settings.virtualcoin == "ZCash") {
                 vcoin_iso = "ZEC";
             } else if (settings.virtualcoin == "Monero") {
                 vcoin_iso = "XMR";
@@ -305,7 +305,7 @@ namespace Coin {
                 case "Brazilian Real":
                     curr_symbol = "R$";
                     break;
-                case "S. African Rand":
+                case "South African Rand":
                     curr_symbol = "R";
                     break;
                 case "Euro":
@@ -355,7 +355,7 @@ namespace Coin {
                 case "Ripple":
                     vcurr_symbol = "Ʀ";
                     break;
-                case "Z-Cash":
+                case "ZCash":
                     vcurr_symbol = "ℨ";
                     break;
                 case "Monero":
