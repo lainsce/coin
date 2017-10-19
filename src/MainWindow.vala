@@ -39,7 +39,7 @@ namespace Coin {
                         resizable: false,
                         title: _("Coin"),
                         height_request: 280,
-                        width_request: 480,
+                        width_request: 500,
                         border_width: 0,
                         window_position: Gtk.WindowPosition.CENTER
             );
