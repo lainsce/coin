@@ -9,10 +9,10 @@
     color: @textColorPrimary;
     icon-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
     text-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
+    box-shadow: inset 0px 1px 1px 2px @colorPrimary;
 }
 
 GtkDialog .window-frame {
-    border-radius: 4px;
     box-shadow:
         0 0 0 1px alpha (shade (@colorPrimary, 0.6), 0.55),
         0 8px 10px 1px alpha (@textColorPrimary, 0.14),
