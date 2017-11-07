@@ -4,19 +4,6 @@
 .titlebar,
 .background {
     background-color: @colorPrimary;
-    background-image: none;
     border: none;
     color: @textColorPrimary;
-    icon-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
-    text-shadow: 0 1px 0px shade (@colorPrimary, 0.52);
-    box-shadow: inset 0px 1px 1px 2px @colorPrimary;
-}
-
-GtkDialog .window-frame {
-    box-shadow:
-        0 0 0 1px alpha (shade (@colorPrimary, 0.6), 0.55),
-        0 8px 10px 1px alpha (@textColorPrimary, 0.14),
-        0 3px 14px 2px alpha (@textColorPrimary, 0.12),
-        0 5px 5px -3px alpha (@textColorPrimary, 0.4),
-        0 14px 28px transparent;
 }
