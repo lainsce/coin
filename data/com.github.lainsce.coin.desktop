@@ -8,4 +8,4 @@ Keywords=Money;Finance;Tracker;Bitcoin;Cryptocurrency;
 Terminal=false
 Type=Application
 StartupNotify=true
-Categories=GTK;Utility;Office;
+Categories=GTK;Utility;Office;Finance;Economy;
