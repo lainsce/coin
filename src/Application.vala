@@ -27,7 +27,6 @@ namespace Coin {
         }
 
         construct {
-            app_icon = "com.github.lainsce.coin";
             exec_name = "com.github.lainsce.coin";
             app_launcher = "com.github.lainsce.coin";
         }

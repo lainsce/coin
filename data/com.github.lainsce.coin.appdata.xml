@@ -26,6 +26,14 @@
         </screenshot>
     </screenshots>
     <releases>
+      <release version="1.2.1" date="2018-04-07">
+          <description>
+              <p>Release: Worldwide Assets</p>
+              <ul>
+                  <li>The names of the currencies are now translatable.</li>
+              </ul>
+          </description>
+      </release>
         <release version="1.2.0" date="2017-10-27">
             <description>
                 <p>Release: Minor Payments</p>

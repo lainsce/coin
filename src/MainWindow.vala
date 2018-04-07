@@ -37,7 +37,7 @@ namespace Coin {
             GLib.Object (application: application,
                         icon_name: "com.github.lainsce.coin",
                         resizable: false,
-                        title: _("Coin"),
+                        title: ("Coin"),
                         height_request: 280,
                         width_request: 500,
                         border_width: 0,
@@ -58,50 +58,50 @@ namespace Coin {
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
 
             base_currency = new Gtk.ComboBoxText();
-            base_currency.append_text("US Dollar");
-            base_currency.append_text("Euro");
-            base_currency.append_text("British Pound");
-            base_currency.append_text("Australian Dollar");
-		    base_currency.append_text("Brazilian Real");
-		    base_currency.append_text("Canadian Dollar");
-		    base_currency.append_text("Chinese Yuan");
-		    base_currency.append_text("Indian Ruppee");
-		    base_currency.append_text("Japanese Yen");
-		    base_currency.append_text("Russian Ruble");
-            base_currency.append_text("South African Rand");
-		    base_currency.margin = 6;
+            base_currency.append_text(_("US Dollar"));
+            base_currency.append_text(_("Euro"));
+            base_currency.append_text(_("British Pound"));
+            base_currency.append_text(_("Australian Dollar"));
+		        base_currency.append_text(_("Brazilian Real"));
+		        base_currency.append_text(_("Canadian Dollar"));
+		        base_currency.append_text(_("Chinese Yuan"));
+		        base_currency.append_text(_("Indian Rupee"));
+		        base_currency.append_text(_("Japanese Yen"));
+		        base_currency.append_text(_("Russian Ruble"));
+            base_currency.append_text(_("S. African Rand"));
+		        base_currency.margin = 6;
 
-            if (settings.coin == "US Dollar") {
+            if (settings.coin == 0) {
                 base_currency.set_active(0);
                 coin_iso = "USD";
-            } else if (settings.coin == "Euro") {
+            } else if (settings.coin == 1) {
                 base_currency.set_active(1);
                 coin_iso = "EUR";
-            } else if (settings.coin == "British Pound") {
+            } else if (settings.coin == 2) {
                 base_currency.set_active(2);
                 coin_iso = "GBP";
-            } else if (settings.coin == "Australian Dollar") {
+            } else if (settings.coin == 3) {
                 base_currency.set_active(3);
                 coin_iso = "AUD";
-            } else if (settings.coin == "Brazilian Real") {
+            } else if (settings.coin == 4) {
                 base_currency.set_active(4);
                 coin_iso = "BRL";
-            } else if (settings.coin == "Canadian Dollar") {
+            } else if (settings.coin == 5) {
                 base_currency.set_active(5);
                 coin_iso = "CAD";
-            } else if (settings.coin == "Chinese Yuan") {
+            } else if (settings.coin == 6) {
                 base_currency.set_active(6);
                 coin_iso = "CNY";
-            } else if (settings.coin == "Indian Ruppee") {
+            } else if (settings.coin == 7) {
                 base_currency.set_active(7);
                 coin_iso = "INR";
-            } else if (settings.coin == "Japanese Yen") {
+            } else if (settings.coin == 8) {
                 base_currency.set_active(8);
                 coin_iso = "JPY";
-            } else if (settings.coin == "Russian Ruble") {
+            } else if (settings.coin == 9) {
                 base_currency.set_active(9);
                 coin_iso = "RUB";
-            } else if (settings.coin == "South African Rand") {
+            } else if (settings.coin == 10) {
                 base_currency.set_active(10);
                 coin_iso = "ZAR";
             } else {
@@ -110,38 +110,38 @@ namespace Coin {
             }
 
             base_vcurrency = new Gtk.ComboBoxText();
-		    base_vcurrency.append_text("Bitcoin");
-		    base_vcurrency.append_text("Dashcoin");
-		    base_vcurrency.append_text("Ethereum");
-		    base_vcurrency.append_text("Litecoin");
-		    base_vcurrency.append_text("Peercoin");
-		    base_vcurrency.append_text("Ripple");
-		    base_vcurrency.append_text("ZCash");
+		        base_vcurrency.append_text("Bitcoin");
+		        base_vcurrency.append_text("Dashcoin");
+		        base_vcurrency.append_text("Ethereum");
+		        base_vcurrency.append_text("Litecoin");
+		        base_vcurrency.append_text("Peercoin");
+		        base_vcurrency.append_text("Ripple");
+		        base_vcurrency.append_text("ZCash");
             base_vcurrency.append_text("Monero");
-		    base_vcurrency.margin = 6;
+		        base_vcurrency.margin = 6;
 
-            if (settings.virtualcoin == "Bitcoin") {
+            if (settings.virtualcoin == 0) {
                 base_vcurrency.set_active(0);
                 vcoin_iso = "BTC";
-            } else if (settings.virtualcoin == "Dashcoin") {
+            } else if (settings.virtualcoin == 1) {
                 base_vcurrency.set_active(1);
                 vcoin_iso = "DASH";
-            } else if (settings.virtualcoin == "Ethereum") {
+            } else if (settings.virtualcoin == 2) {
                 base_vcurrency.set_active(2);
                 vcoin_iso = "ETH";
-            } else if (settings.virtualcoin == "Litecoin") {
+            } else if (settings.virtualcoin == 3) {
                 base_vcurrency.set_active(3);
                 vcoin_iso = "LTC";
-            } else if (settings.virtualcoin == "Peercoin") {
+            } else if (settings.virtualcoin == 4) {
                 base_vcurrency.set_active(4);
                 vcoin_iso = "PPC";
-            } else if (settings.virtualcoin == "Ripple") {
+            } else if (settings.virtualcoin == 5) {
                 base_vcurrency.set_active(5);
                 vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == "ZCash") {
+            } else if (settings.virtualcoin == 6) {
                 base_vcurrency.set_active(6);
                 vcoin_iso = "ZEC";
-            } else if (settings.virtualcoin == "Monero") {
+            } else if (settings.virtualcoin == 7) {
                 base_vcurrency.set_active(7);
                 vcoin_iso = "XMR";
             } else {
@@ -196,9 +196,9 @@ namespace Coin {
 
             int x = settings.window_x;
             int y = settings.window_y;
-            string coin = base_currency.get_active_text();
+            int coin = base_currency.get_active();
             coin = settings.coin;
-            string vcoin = base_vcurrency.get_active_text();
+            int vcoin = base_vcurrency.get_active();
             vcoin = settings.virtualcoin;
 
             if (x != -1 && y != -1) {
@@ -221,57 +221,60 @@ namespace Coin {
             var settings = AppSettings.get_default ();
             settings.window_x = x;
             settings.window_y = y;
-            settings.coin = base_currency.get_active_text();
-            settings.virtualcoin = base_vcurrency.get_active_text();
+            settings.coin = base_currency.get_active();
+            settings.virtualcoin = base_vcurrency.get_active();
 
             return false;
         }
 
         public bool get_values () {
             var settings = AppSettings.get_default ();
-            settings.coin = base_currency.get_active_text();
-            if (settings.coin == "Brazilian Real") {
-                coin_iso = "BRL";
-            } else if (settings.coin == "South African Rand") {
-                coin_iso = "ZAR";
-            } else if (settings.coin == "Euro") {
-                coin_iso = "EUR";
-            } else if (settings.coin == "British Pound") {
-                coin_iso = "GBP";
-            } else if (settings.coin == "US Dollar") {
+            settings.coin = base_currency.get_active();
+            if (settings.coin == 0) {
                 coin_iso = "USD";
-            } else if (settings.coin == "Australian Dollar") {
+            } else if (settings.coin == 1) {
+                coin_iso = "EUR";
+            } else if (settings.coin == 2) {
+                coin_iso = "GBP";
+            } else if (settings.coin == 3) {
                 coin_iso = "AUD";
-            } else if (settings.coin == "Canadian Dollar") {
+            } else if (settings.coin == 4) {
+                coin_iso = "BRL";
+            } else if (settings.coin == 5) {
                 coin_iso = "CAD";
-            } else if (settings.coin == "Japanese Yen") {
-                coin_iso = "JPY";
-            } else if (settings.coin == "Chinese Yuan") {
+            } else if (settings.coin == 6) {
                 coin_iso = "CNY";
-            } else if (settings.coin == "Russian Ruble") {
-                coin_iso = "RUB";
-            } else if (settings.coin == "Indian Ruppee") {
+            } else if (settings.coin == 7) {
                 coin_iso = "INR";
+            } else if (settings.coin == 8) {
+                coin_iso = "JPY";
+            } else if (settings.coin == 9) {
+                coin_iso = "RUB";
+            } else if (settings.coin == 10) {
+                coin_iso = "ZAR";
+            } else {
+                base_currency.set_active(0);
+                coin_iso = "USD";
             }
 
             debug ("Chose %s".printf(coin_iso));
 
-            settings.virtualcoin = base_vcurrency.get_active_text();
-            if (settings.virtualcoin == "Bitcoin") {
+            settings.virtualcoin = base_vcurrency.get_active();
+            if (settings.virtualcoin == 0) {
                 vcoin_iso = "BTC";
-            } else if (settings.virtualcoin == "Dashcoin") {
+            } else if (settings.virtualcoin == 1) {
                 vcoin_iso = "DASH";
-            } else if (settings.virtualcoin == "Ethereum") {
+            } else if (settings.virtualcoin == 2) {
                 vcoin_iso = "ETH";
-            } else if (settings.virtualcoin == "Litecoin") {
+            } else if (settings.virtualcoin == 3) {
                 vcoin_iso = "LTC";
-            } else if (settings.virtualcoin == "Peercoin") {
+            } else if (settings.virtualcoin == 4) {
                 vcoin_iso = "PPC";
-            } else if (settings.virtualcoin == "Ripple") {
+            } else if (settings.virtualcoin == 5) {
                 vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == "ZCash") {
+            } else if (settings.virtualcoin == 6) {
                 vcoin_iso = "ZEC";
-            } else if (settings.virtualcoin == "Monero") {
+            } else if (settings.virtualcoin == 7) {
                 vcoin_iso = "XMR";
             }
             debug ("Chose %s".printf(vcoin_iso));
@@ -300,33 +303,33 @@ namespace Coin {
         public void set_labels () {
             var settings = AppSettings.get_default ();
             var curr_symbol = "";
-            settings.coin = base_currency.get_active_text();
+            settings.coin = base_currency.get_active();
             switch (settings.coin) {
-                case "Brazilian Real":
+                case 4:
                     curr_symbol = "R$";
                     break;
-                case "South African Rand":
+                case 10:
                     curr_symbol = "R";
                     break;
-                case "Euro":
+                case 1:
                     curr_symbol = "€";
                     break;
-                case "British Pound":
+                case 2:
                     curr_symbol = "£";
                     break;
-                case "US Dollar":
-                case "Australian Dollar":
-                case "Canadian Dollar":
+                case 0:
+                case 3:
+                case 5:
                     curr_symbol = "$";
                     break;
-                case "Japanese Yen":
-                case "Chinese Yuan":
+                case 8:
+                case 6:
                     curr_symbol = "¥";
                     break;
-                case "Russian Ruble":
+                case 9:
                     curr_symbol = "₽";
                     break;
-                case "Indian Ruppee":
+                case 7:
                     curr_symbol = "₹";
                     break;
                 default:
@@ -335,30 +338,30 @@ namespace Coin {
             }
 
             var vcurr_symbol = "";
-            settings.virtualcoin = base_vcurrency.get_active_text();
+            settings.virtualcoin = base_vcurrency.get_active();
             switch (settings.virtualcoin) {
-                case "Bitcoin":
+                case 0:
                     vcurr_symbol = "Ƀ";
                     break;
-                case "Dashcoin":
+                case 1:
                     vcurr_symbol = "ⅅ";
                     break;
-                case "Ethereum":
+                case 2:
                     vcurr_symbol = "Ξ";
                     break;
-                case "Litecoin":
+                case 3:
                     vcurr_symbol = "Ł";
                     break;
-                case "Peercoin":
+                case 4:
                     vcurr_symbol = "þ";
                     break;
-                case "Ripple":
+                case 5:
                     vcurr_symbol = "Ʀ";
                     break;
-                case "ZCash":
+                case 6:
                     vcurr_symbol = "ℨ";
                     break;
-                case "Monero":
+                case 7:
                     vcurr_symbol = "ɱ";
                     break;
                 default:
