@@ -341,7 +341,7 @@ namespace Coin {
             settings.virtualcoin = base_vcurrency.get_active();
             switch (settings.virtualcoin) {
                 case 0:
-                    vcurr_symbol = "Ƀ";
+                    vcurr_symbol = "₿";
                     break;
                 case 1:
                     vcurr_symbol = "ⅅ";
