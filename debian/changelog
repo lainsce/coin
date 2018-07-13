@@ -1,3 +1,9 @@
+com.github.lainsce.coin (1.2.3) xenial; urgency=low
+
+  * Translations.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 13 Jul 2018 02:45:00 -0300
+
 com.github.lainsce.coin (1.2.1) xenial; urgency=low
 
   * The names of the currencies are now translatable.
