@@ -1,9 +1,32 @@
 @define-color colorPrimary #badbad;
-@define-color textColorPrimary #113311;
+@define-color borderPrimary #445533;
+@define-color textColorPrimary #223311;
 
 .titlebar,
 .background {
     background-color: @colorPrimary;
     border: none;
     color: @textColorPrimary;
+}
+
+.coin-toolbar {
+    background: @colorPrimary;
+    color: @textColorPrimary;
+}
+
+combobox > box > button {
+    background: @colorPrimary;
+    color: @textColorPrimary;
+}
+
+cellview {
+    color: @textColorPrimary;
+}
+
+.negative-icon {
+    color: @STRAWBERRY_500;
+}
+
+.positive-icon {
+    color: @LIME_500;
 }

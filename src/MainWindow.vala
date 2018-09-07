@@ -20,28 +20,27 @@ using Soup;
 using Json;
 
 namespace Coin {
-    public class MainWindow : Gtk.Dialog {
+    public class MainWindow : Gtk.ApplicationWindow {
         public Gtk.Label label_result;
         public Gtk.Label label_info;
-        public Gtk.Label label_eth_result;
+        public Gtk.Label label_history;
         public Gtk.ComboBoxText base_currency;
         public Gtk.ComboBoxText base_vcurrency;
         public Gtk.Stack stack;
+        public Gtk.Image aicon;
 
         public double avg;
-        public string time;
+        public double avg_history;
         public string coin_iso;
         public string vcoin_iso;
 
         public MainWindow (Gtk.Application application) {
             GLib.Object (application: application,
-                        icon_name: "com.github.lainsce.coin",
-                        resizable: false,
-                        title: ("Coin"),
-                        height_request: 280,
-                        width_request: 500,
-                        border_width: 0,
-                        window_position: Gtk.WindowPosition.CENTER
+                         icon_name: "com.github.lainsce.coin",
+                         resizable: false,
+                         height_request: 280,
+                         width_request: 500,
+                         border_width: 6
             );
         }
 
@@ -51,6 +50,18 @@ namespace Coin {
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
             set_keep_below (true);
             stick ();
+
+            var titlebar = new Gtk.HeaderBar ();
+            titlebar.has_subtitle = false;
+            titlebar.show_close_button = true;
+
+
+            var titlebar_style_context = titlebar.get_style_context ();
+            titlebar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
+            titlebar_style_context.add_class ("default-decoration");
+            titlebar_style_context.add_class ("coin-toolbar");
+
+            this.set_titlebar (titlebar);
 
             var settings = AppSettings.get_default ();
             this.get_style_context ().add_class ("rounded");
@@ -62,14 +73,14 @@ namespace Coin {
             base_currency.append_text(_("Euro"));
             base_currency.append_text(_("British Pound"));
             base_currency.append_text(_("Australian Dollar"));
-		        base_currency.append_text(_("Brazilian Real"));
-		        base_currency.append_text(_("Canadian Dollar"));
-		        base_currency.append_text(_("Chinese Yuan"));
-		        base_currency.append_text(_("Indian Rupee"));
-		        base_currency.append_text(_("Japanese Yen"));
-		        base_currency.append_text(_("Russian Ruble"));
+            base_currency.append_text(_("Brazilian Real"));
+            base_currency.append_text(_("Canadian Dollar"));
+            base_currency.append_text(_("Chinese Yuan"));
+            base_currency.append_text(_("Indian Rupee"));
+            base_currency.append_text(_("Japanese Yen"));
+            base_currency.append_text(_("Russian Ruble"));
             base_currency.append_text(_("S. African Rand"));
-		        base_currency.margin = 6;
+            base_currency.margin = 6;
 
             if (settings.coin == 0) {
                 base_currency.set_active(0);
@@ -110,15 +121,16 @@ namespace Coin {
             }
 
             base_vcurrency = new Gtk.ComboBoxText();
-		        base_vcurrency.append_text("Bitcoin");
-		        base_vcurrency.append_text("Dashcoin");
-		        base_vcurrency.append_text("Ethereum");
-		        base_vcurrency.append_text("Litecoin");
-		        base_vcurrency.append_text("Peercoin");
-		        base_vcurrency.append_text("Ripple");
-		        base_vcurrency.append_text("ZCash");
+            base_vcurrency.append_text("Bitcoin");
+            base_vcurrency.append_text("Dashcoin");
+            base_vcurrency.append_text("Ethereum");
+            base_vcurrency.append_text("Litecoin");
+            base_vcurrency.append_text("Peercoin");
+            base_vcurrency.append_text("Ripple");
+            base_vcurrency.append_text("ZCash");
             base_vcurrency.append_text("Monero");
-		        base_vcurrency.margin = 6;
+            base_vcurrency.append_text("Bitcoin Cash");
+            base_vcurrency.margin = 6;
 
             if (settings.virtualcoin == 0) {
                 base_vcurrency.set_active(0);
@@ -144,6 +156,9 @@ namespace Coin {
             } else if (settings.virtualcoin == 7) {
                 base_vcurrency.set_active(7);
                 vcoin_iso = "XMR";
+            } else if (settings.virtualcoin == 8) {
+                base_vcurrency.set_active(8);
+                vcoin_iso = "BCH";
             } else {
                 base_vcurrency.set_active(0);
                 vcoin_iso = "BTC";
@@ -155,8 +170,33 @@ namespace Coin {
             label_info = new Gtk.Label (_("Updated every 10 seconds"));
             label_info.set_halign (Gtk.Align.END);
             label_info.hexpand = true;
+            label_history = new Gtk.Label ("");
+            label_result.set_halign (Gtk.Align.START);
+
+            aicon = new Gtk.Image ();
+            aicon.icon_size = Gtk.IconSize.SMALL_TOOLBAR;
+
+            if (avg_history <= 0.0) {
+                aicon.icon_name = "go-down-symbolic";
+                var context = aicon.get_style_context ();
+                context.add_class ("negative-icon");
+                context.remove_class ("positive-icon");
+            } else {
+                aicon.icon_name = "go-up-symbolic";
+                var context = aicon.get_style_context ();
+                context.remove_class ("negative-icon");
+                context.add_class ("positive-icon");
+            }
+
             get_values ();
             set_labels ();
+
+            var avg_grid = new Gtk.Grid ();
+            avg_grid.margin_top = 0;
+            avg_grid.margin_start = 6;
+            avg_grid.column_spacing = 6;
+            avg_grid.attach (aicon, 0, 0, 1, 1);
+            avg_grid.attach (label_history, 1, 0, 1, 1);
 
             var grid = new Gtk.Grid ();
             grid.margin_top = 0;
@@ -167,6 +207,7 @@ namespace Coin {
             grid.attach (base_currency, 0, 1, 2, 1);
             grid.attach (base_vcurrency, 2, 1, 2, 1);
             grid.attach (label_result, 1, 2, 3, 2);
+            grid.attach (avg_grid, 0, 4, 1, 1);
             grid.attach (label_info, 1, 4, 3, 2);
 
             stack = new Gtk.Stack ();
@@ -176,22 +217,58 @@ namespace Coin {
             stack.homogeneous = true;
             stack.add_named (grid, "money");
 
-            ((Gtk.Container) get_content_area ()).add (stack);
+            this.add (stack);
             stack.show_all ();
 
             base_currency.changed.connect (() => {
                 get_values ();
                 set_labels ();
+
+                if (avg_history <= 0.0) {
+                    aicon.icon_name = "go-down-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.add_class ("negative-icon");
+                    context.remove_class ("positive-icon");
+                } else {
+                    aicon.icon_name = "go-up-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.remove_class ("negative-icon");
+                    context.add_class ("positive-icon");
+                }
             });
 
             base_vcurrency.changed.connect (() => {
                 get_values ();
                 set_labels ();
+
+                if (avg_history <= 0.0) {
+                    aicon.icon_name = "go-down-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.add_class ("negative-icon");
+                    context.remove_class ("positive-icon");
+                } else {
+                    aicon.icon_name = "go-up-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.remove_class ("negative-icon");
+                    context.add_class ("positive-icon");
+                }
             });
 
             Timeout.add_seconds (10, () => {
                 get_values ();
                 set_labels ();
+
+                if (avg_history <= 0.0) {
+                    aicon.icon_name = "go-down-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.add_class ("negative-icon");
+                    context.remove_class ("positive-icon");
+                } else {
+                    aicon.icon_name = "go-up-symbolic";
+                    var context = aicon.get_style_context ();
+                    context.remove_class ("negative-icon");
+                    context.add_class ("positive-icon");
+                }
             });
 
             int x = settings.window_x;
@@ -276,6 +353,8 @@ namespace Coin {
                 vcoin_iso = "ZEC";
             } else if (settings.virtualcoin == 7) {
                 vcoin_iso = "XMR";
+            } else if (settings.virtualcoin == 8) {
+                vcoin_iso = "BCH";
             }
             debug ("Chose %s".printf(vcoin_iso));
 
@@ -293,6 +372,7 @@ namespace Coin {
                 var from_object = response_object.get_object_member ("%s".printf(vcoin_iso));
                 var to_object = from_object.get_object_member ("%s".printf(coin_iso));
                 avg = to_object.get_double_member("PRICE");
+                avg_history = to_object.get_double_member("CHANGE24HOUR");
             } catch (Error e) {
                 warning ("Failed to connect to service: %s", e.message);
             }
@@ -334,7 +414,7 @@ namespace Coin {
                     break;
                 default:
                     curr_symbol = "¤";
-                    break;
+                break;
             }
 
             var vcurr_symbol = "";
@@ -364,12 +444,17 @@ namespace Coin {
                 case 7:
                     vcurr_symbol = "ɱ";
                     break;
+                case 8:
+                    vcurr_symbol = "BC";
+                    break;
                 default:
                     curr_symbol = "¬";
-                    break;
+                break;
             }
 
             label_result.set_markup ("""<span font="22">%s</span> <span font="30">%.1f</span> <span font="18">/ 1 %s</span>""".printf(curr_symbol, avg, vcurr_symbol));
+
+            label_history.set_markup ("""<span font="10">%.1f</span>""".printf(avg_history));
         }
     }
 }

@@ -55,6 +55,15 @@
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <releases>
+      <release version="1.2.4" date="2018-09-07">
+          <description>
+              <p>Release: Ticker Ticking</p>
+              <ul>
+                  <li>A new change of value ticker for the day.</li>
+                  <li>Added Bitcoin Cash virtual currency.</li>
+              </ul>
+          </description>
+      </release>
       <release version="1.2.3" date="2018-07-13">
           <description>
               <p>Release: 1 2 3, hello Juno!</p>
