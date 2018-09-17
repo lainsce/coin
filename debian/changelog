@@ -1,0 +1,108 @@
+com.github.lainsce.coin (1.2.4) xenial; urgency=low
+
+  * New change ticker.
+  * Add Bitcoin Cash.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 7 Sep 2018 17:00:00 -0300
+
+com.github.lainsce.coin (1.2.3) xenial; urgency=low
+
+  * Translations.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 13 Jul 2018 02:45:00 -0300
+
+com.github.lainsce.coin (1.2.1) xenial; urgency=low
+
+  * The names of the currencies are now translatable.
+
+ -- Lains <lainsce@airmail.cc>  Sat, 07 Apr 2018 02:45:00 -0300
+
+com.github.lainsce.coin (1.2.0) xenial; urgency=low
+
+  * Minor fixes.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 27 Oct 2017 11:00:00 -0300
+
+com.github.lainsce.coin (1.1.9) xenial; urgency=low
+
+  * Redesign of the app.
+  * Uses the full name of coins/currencies.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 20 Oct 2017 11:00:00 -0300
+
+com.github.lainsce.coin (1.1.8) xenial; urgency=low
+
+  * Remembers last used pair of coin/currency.
+  * Minor fixes in the front-end.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 13 Oct 2017 11:53:00 -0300
+
+com.github.lainsce.coin (1.1.7) xenial; urgency=low
+
+  * Add Brazilian Portuguese translations.
+
+ -- Lains <lainsce@airmail.cc>  Sun, 1 Oct 2017 02:53:00 -0300
+
+com.github.lainsce.coin (1.1.6) xenial; urgency=low
+
+  * Load GTK CSS Stylesheet with GResource.
+
+ -- Lains <lainsce@airmail.cc>  Sun, 17 Sep 2017 03:33:00 -0300
+
+com.github.lainsce.coin (1.1.5) xenial; urgency=low
+
+  * Enable Coin for i18n.
+  * Add XAR coin.
+  * Add South African Rand.
+
+ -- Lains <lainsce@airmail.cc>  Sat, 7 Sep 2017 02:43:00 -0300
+
+com.github.lainsce.coin (1.1.4) xenial; urgency=low
+
+  * Fix the switch statement on coin symbols.
+
+ -- Lains <lainsce@airmail.cc>  Sat, 8 Jun 2017 03:23:00 -0300
+
+com.github.lainsce.coin (1.1.3) xenial; urgency=low
+
+  * More currencies unveiled.
+
+ -- Lains <lainsce@airmail.cc>  Sat, 8 Jun 2017 03:11:00 -0300
+
+com.github.lainsce.coin (1.1.2) xenial; urgency=low
+
+  * New icons from Sam Hewitt.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 23 Jun 2017 12:52:00 -0300
+
+com.github.lainsce.coin (1.1.1) xenial; urgency=low
+
+  * Bump release for AppCenter monetizing feature.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 23 Jun 2017 01:52:00 -0300
+
+com.github.lainsce.coin (1.1.0) xenial; urgency=low
+
+  * Bump release for AppCenter.
+  * Redesign the icon used in-app.
+  * Redesign the applet, showing currencies' symbols.
+
+ -- Lains <lainsce@airmail.cc>  Thu, 22 Jun 2017 12:52:00 -0300
+
+com.github.lainsce.coin (1.0.7) xenial; urgency=low
+
+  * Add tracking between currencies the user chooses.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 16 Jun 2017 04:52:00 -0300
+
+com.github.lainsce.coin (1.0.6) xenial; urgency=low
+
+  * Add Ethereum tracking.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 16 Jun 2017 04:52:00 -0300
+
+com.github.lainsce.coin (0.1.0) xenial; urgency=low
+
+  * Initial Release.
+
+ -- Lains <lainsce@airmail.cc>  Fri, 16 Jun 2017 04:52:00 -0300
