@@ -1,0 +1,62 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.lainsce.coin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-07 02:57-0300\n"
+"PO-Revision-Date: 2018-10-26 23:55+0100\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"Last-Translator: Ciaran Ainsworth <ciaranainsworth@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: fr\n"
+
+#: src/MainWindow.vala:61
+msgid "US Dollar"
+msgstr "Dollars américain"
+
+#: src/MainWindow.vala:62
+msgid "Euro"
+msgstr "Euro"
+
+#: src/MainWindow.vala:63
+msgid "British Pound"
+msgstr "Livres sterling"
+
+#: src/MainWindow.vala:64
+msgid "Australian Dollar"
+msgstr "Dollar australien"
+
+#: src/MainWindow.vala:65
+msgid "Brazilian Real"
+msgstr "Real brésilien"
+
+#: src/MainWindow.vala:66
+msgid "Canadian Dollar"
+msgstr "Dollar canadien"
+
+#: src/MainWindow.vala:67
+msgid "Chinese Yuan"
+msgstr "Le yuan chinois"
+
+#: src/MainWindow.vala:68
+msgid "Indian Rupee"
+msgstr "Roupie indienne"
+
+#: src/MainWindow.vala:69
+msgid "Japanese Yen"
+msgstr "Yen japonais"
+
+#: src/MainWindow.vala:70
+msgid "Russian Ruble"
+msgstr "Rouble russe"
+
+#: src/MainWindow.vala:71
+msgid "S. African Rand"
+msgstr "Rand sud-africain"
+
+#: src/MainWindow.vala:155
+msgid "Updated every 10 seconds"
+msgstr "Mis à jour toutes les 10 secondes"
