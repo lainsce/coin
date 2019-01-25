@@ -14,31 +14,31 @@ msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:6
 msgid "Coin"
-mgstr ""
+msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:7
 msgid "Never miss out on the monetary value of a virtual currency with this handy applet"
-mgstr ""
+msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:9
 msgid "Track the virtual currencies in real world currency value with this handy applet"
-mgstr ""
+msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:11
 msgid "Choose which currency and virtual currency to use for tracking"
-mgstr "" 
+msgstr "" 
 
 #: data/com.github.lainsce.coin.appdata.xml:12
 msgid "Quit anytime with the shortcut Ctrl + Q"
-mgstr ""
+msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:13
 msgid "Move the applet by dragging it from anywhere in the window"
-mgstr ""
+msgstr ""
 
 #: data/com.github.lainsce.coin.appdata.xml:14
 msgid "Stays out of your way in the desktop"
-mgstr ""
+msgstr ""
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
