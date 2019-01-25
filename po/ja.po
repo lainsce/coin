@@ -13,50 +13,82 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Language: ja\n"
 
-#: src/MainWindow.vala:61
+#: data/com.github.lainsce.coin.appdata.xml:6
+msgid "Coin"
+msgstr ""
+
+#: data/com.github.lainsce.coin.appdata.xml:7
+msgid "Never miss out on the monetary value of a virtual currency with this handy applet"
+msgstr ""
+
+#: data/com.github.lainsce.coin.appdata.xml:9
+msgid "Track the virtual currencies in real world currency value with this handy applet"
+msgstr ""
+
+#: data/com.github.lainsce.coin.appdata.xml:11
+msgid "Choose which currency and virtual currency to use for tracking"
+msgstr "" 
+
+#: data/com.github.lainsce.coin.appdata.xml:12
+msgid "Quit anytime with the shortcut Ctrl + Q"
+msgstr ""
+
+#: data/com.github.lainsce.coin.appdata.xml:13
+msgid "Move the applet by dragging it from anywhere in the window"
+msgstr ""
+
+#: data/com.github.lainsce.coin.appdata.xml:14
+msgid "Stays out of your way in the desktop"
+msgstr ""
+
+#: src/MainWindow.vala:72
 msgid "US Dollar"
 msgstr "米ドル"
 
-#: src/MainWindow.vala:62
+#: src/MainWindow.vala:73
 msgid "Euro"
 msgstr "ユーロ"
 
-#: src/MainWindow.vala:63
+#: src/MainWindow.vala:74
 msgid "British Pound"
 msgstr "イギリス・ポンド"
 
-#: src/MainWindow.vala:64
+#: src/MainWindow.vala:75
 msgid "Australian Dollar"
 msgstr "オーストラリア・ドル"
 
-#: src/MainWindow.vala:65
+#: src/MainWindow.vala:76
 msgid "Brazilian Real"
 msgstr "ブラジル・レアル"
 
-#: src/MainWindow.vala:66
+#: src/MainWindow.vala:77
 msgid "Canadian Dollar"
 msgstr "カナダ・ドル"
 
-#: src/MainWindow.vala:67
+#: src/MainWindow.vala:78
 msgid "Chinese Yuan"
 msgstr "人民元"
 
-#: src/MainWindow.vala:68
+#: src/MainWindow.vala:79
 msgid "Indian Rupee"
 msgstr "インド・ルピー"
 
-#: src/MainWindow.vala:69
+#: src/MainWindow.vala:80
 msgid "Japanese Yen"
 msgstr "日本円"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:81
 msgid "Russian Ruble"
 msgstr "ロシアルーブル"
 
-#: src/MainWindow.vala:71
+#: src/MainWindow.vala:82
 msgid "S. African Rand"
 msgstr "南アフリカランド"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
 msgstr "10秒ごとに更新"
+
+#: src/MainWindow.vala:377
+msgid "Failed to connect to service: %s"
+msgstr ""
