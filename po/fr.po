@@ -13,50 +13,82 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr\n"
 
-#: src/MainWindow.vala:61
+#: data/com.github.lainsce.coin.appdata.xml:6
+msgid "Coin"
+msgstr "Coin"
+
+#: data/com.github.lainsce.coin.appdata.xml:7
+msgid "Never miss out on the monetary value of a virtual currency with this handy applet"
+msgstr "Ne manquez jamais la valeur monétaire d'une monnaie virtuelle avec cette application pratique"
+
+#: data/com.github.lainsce.coin.appdata.xml:9
+msgid "Track the virtual currencies in real world currency value with this handy applet"
+msgstr "Suivez les devises virtuelles en valeur réelle avec cette application pratique"
+
+#: data/com.github.lainsce.coin.appdata.xml:11
+msgid "Choose which currency and virtual currency to use for tracking"
+msgstr "Choisissez la devise et la devise virtuelle à utiliser pour le suivi" 
+
+#: data/com.github.lainsce.coin.appdata.xml:12
+msgid "Quit anytime with the shortcut Ctrl + Q"
+msgstr "Quitter à tout moment avec le raccourci Ctrl + Q"
+
+#: data/com.github.lainsce.coin.appdata.xml:13
+msgid "Move the applet by dragging it from anywhere in the window"
+msgstr "Déplacez l'application en la faisant glisser depuis n'importe quel endroit de la fenêtre"
+
+#: data/com.github.lainsce.coin.appdata.xml:14
+msgid "Stays out of your way in the desktop"
+msgstr "Reste à l'écart sur votre bureau"
+
+#: src/MainWindow.vala:72
 msgid "US Dollar"
 msgstr "Dollars américain"
 
-#: src/MainWindow.vala:62
+#: src/MainWindow.vala:73
 msgid "Euro"
 msgstr "Euro"
 
-#: src/MainWindow.vala:63
+#: src/MainWindow.vala:74
 msgid "British Pound"
 msgstr "Livres sterling"
 
-#: src/MainWindow.vala:64
+#: src/MainWindow.vala:75
 msgid "Australian Dollar"
 msgstr "Dollar australien"
 
-#: src/MainWindow.vala:65
+#: src/MainWindow.vala:76
 msgid "Brazilian Real"
 msgstr "Real brésilien"
 
-#: src/MainWindow.vala:66
+#: src/MainWindow.vala:77
 msgid "Canadian Dollar"
 msgstr "Dollar canadien"
 
-#: src/MainWindow.vala:67
+#: src/MainWindow.vala:78
 msgid "Chinese Yuan"
-msgstr "Le yuan chinois"
+msgstr "Yuan chinois"
 
-#: src/MainWindow.vala:68
+#: src/MainWindow.vala:79
 msgid "Indian Rupee"
 msgstr "Roupie indienne"
 
-#: src/MainWindow.vala:69
+#: src/MainWindow.vala:80
 msgid "Japanese Yen"
 msgstr "Yen japonais"
 
-#: src/MainWindow.vala:70
+#: src/MainWindow.vala:81
 msgid "Russian Ruble"
 msgstr "Rouble russe"
 
-#: src/MainWindow.vala:71
+#: src/MainWindow.vala:82
 msgid "S. African Rand"
 msgstr "Rand sud-africain"
 
-#: src/MainWindow.vala:155
+#: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
-msgstr "Mis à jour toutes les 10 secondes"
+msgstr "Actualisé toutes les 10 secondes"
+
+#: src/MainWindow.vala:377
+msgid "Failed to connect to service: %s"
+msgstr "Échec de la connexion au service : %s"
