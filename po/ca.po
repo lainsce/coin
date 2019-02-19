@@ -3,43 +3,45 @@ msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-04-07 02:57-0300\n"
-"PO-Revision-Date: 2018-04-07 16:30-0500\n"
+"PO-Revision-Date: 2019-02-18 19:55-0600\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2.1\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: ca\n"
 
 #: data/com.github.lainsce.coin.appdata.xml:6
 msgid "Coin"
-msgstr ""
+msgstr "Coin"
 
 #: data/com.github.lainsce.coin.appdata.xml:7
 msgid "Never miss out on the monetary value of a virtual currency with this handy applet"
-msgstr ""
+msgstr "No us perdeu el valor d’una moneda virtual amb aquesta útil miniaplicació"
 
 #: data/com.github.lainsce.coin.appdata.xml:9
 msgid "Track the virtual currencies in real world currency value with this handy applet"
 msgstr ""
+"Comproveu el valor en moneda real de les monedes virtuals amb aquesta "
+"pràctica miniaplicació"
 
 #: data/com.github.lainsce.coin.appdata.xml:11
 msgid "Choose which currency and virtual currency to use for tracking"
-msgstr "" 
+msgstr "Seleccioneu quina moneda real i quina de virtual monitoritzar"
 
 #: data/com.github.lainsce.coin.appdata.xml:12
 msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr ""
+msgstr "Sortiu en qualsevol moment prement Ctrl + Q"
 
 #: data/com.github.lainsce.coin.appdata.xml:13
 msgid "Move the applet by dragging it from anywhere in the window"
-msgstr ""
+msgstr "Arrossegueu la finestra des de qualsevol lloc per a desplaçar-la"
 
 #: data/com.github.lainsce.coin.appdata.xml:14
 msgid "Stays out of your way in the desktop"
-msgstr ""
+msgstr "No us destorba a l’escriptori"
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
@@ -91,4 +93,4 @@ msgstr "S’actualitza cada 10 segons"
 
 #: src/MainWindow.vala:377
 msgid "Failed to connect to service: %s"
-msgstr ""
+msgstr "No s’ha pogut connectar amb el servei: %s"
