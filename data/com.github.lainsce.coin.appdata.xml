@@ -55,6 +55,15 @@
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <releases>
+      <release version="1.2.5" date="2019-03-15">
+          <description>
+              <p>Release: Spanish Peso</p>
+              <ul>
+                  <li>Added translations into Spanish, French, Japanese, Dutch, and Catalan.</li>
+                  <li>Minor fixes.</li>
+              </ul>
+          </description>
+      </release>
       <release version="1.2.4" date="2018-09-07">
           <description>
               <p>Release: Ticker Ticking</p>
