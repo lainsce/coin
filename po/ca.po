@@ -1,47 +1,20 @@
+# Catalan translations for com.github.lainsce.coin package.
+# Copyright (C) 2019 THE com.github.lainsce.coin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.lainsce.coin package.
+# Adolfo Jayme Barrientos, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-07 02:57-0300\n"
-"PO-Revision-Date: 2019-02-18 19:55-0600\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2019-03-30 11:33+0100\n"
+"PO-Revision-Date: 2019-03-30 11:25+0100\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: none\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Language: ca\n"
-
-#: data/com.github.lainsce.coin.appdata.xml:6
-msgid "Coin"
-msgstr "Coin"
-
-#: data/com.github.lainsce.coin.appdata.xml:7
-msgid "Never miss out on the monetary value of a virtual currency with this handy applet"
-msgstr "No us perdeu el valor d’una moneda virtual amb aquesta útil miniaplicació"
-
-#: data/com.github.lainsce.coin.appdata.xml:9
-msgid "Track the virtual currencies in real world currency value with this handy applet"
-msgstr ""
-"Comproveu el valor en moneda real de les monedes virtuals amb aquesta "
-"pràctica miniaplicació"
-
-#: data/com.github.lainsce.coin.appdata.xml:11
-msgid "Choose which currency and virtual currency to use for tracking"
-msgstr "Seleccioneu quina moneda real i quina de virtual monitoritzar"
-
-#: data/com.github.lainsce.coin.appdata.xml:12
-msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr "Sortiu en qualsevol moment prement Ctrl + Q"
-
-#: data/com.github.lainsce.coin.appdata.xml:13
-msgid "Move the applet by dragging it from anywhere in the window"
-msgstr "Arrossegueu la finestra des de qualsevol lloc per a desplaçar-la"
-
-#: data/com.github.lainsce.coin.appdata.xml:14
-msgid "Stays out of your way in the desktop"
-msgstr "No us destorba a l’escriptori"
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
@@ -90,7 +63,3 @@ msgstr "Rand sud-africà"
 #: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
 msgstr "S’actualitza cada 10 segons"
-
-#: src/MainWindow.vala:377
-msgid "Failed to connect to service: %s"
-msgstr "No s’ha pogut connectar amb el servei: %s"

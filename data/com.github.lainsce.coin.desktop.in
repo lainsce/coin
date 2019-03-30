@@ -1,8 +1,6 @@
 [Desktop Entry]
 Name=Coin
 Comment=Track the virtual currencies in real world currency value
-Comment[pt_BR]=Rastreie moedas virtuais em valor de moedas mundiais
-Comment[cs]=Sledujte hodnoty virtuálních měn ve fyzických světových měnách
 Exec=com.github.lainsce.coin
 Icon=com.github.lainsce.coin
 Keywords=Money;Finance;Tracker;Bitcoin;Cryptocurrency;

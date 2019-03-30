@@ -1,16 +1,20 @@
+# Dutch translations for com.github.lainsce.coin package.
+# Copyright (C) 2019 THE com.github.lainsce.coin'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.lainsce.coin package.
+# Heimen Stoffels, 2019.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-23 11:19+0100\n"
-"PO-Revision-Date: 2019-03-14 20:28+0100\n"
+"POT-Creation-Date: 2019-03-30 11:33+0100\n"
+"PO-Revision-Date: 2019-03-30 11:25+0100\n"
 "Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
-"Language-Team: \n"
+"Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/MainWindow.vala:72
@@ -60,166 +64,3 @@ msgstr "Zuid-Afrikaanse rand"
 #: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
 msgstr "Wordt elke 10 seconden bijgewerkt"
-
-#: data/com.github.lainsce.coin.appdata.xml:6
-#: data/com.github.lainsce.coin.desktop:3
-msgid "Coin"
-msgstr "Coin"
-
-#: data/com.github.lainsce.coin.appdata.xml:7
-msgid ""
-"Never miss out on the monetary value of a virtual currency with this handy "
-"applet"
-msgstr ""
-"Mis nooit meer de financiële waarde van virtuele valuta met deze handige app"
-
-#: data/com.github.lainsce.coin.appdata.xml:9
-msgid ""
-"Track the virtual currencies in real world currency value with this handy "
-"applet"
-msgstr "Houd de virtuele valuta in echte valutawaarde bij met deze handige app"
-
-#: data/com.github.lainsce.coin.appdata.xml:11
-msgid "Choose which currency and virtual currency to use for tracking"
-msgstr "Kies welke valuta en virtuele valuta je wilt bijhouden"
-
-#: data/com.github.lainsce.coin.appdata.xml:12
-msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr "Sluit af met Ctrl + Q"
-
-#: data/com.github.lainsce.coin.appdata.xml:13
-msgid "Move the applet by dragging it from anywhere in the window"
-msgstr "Verplaats het venster door het van waar dan ook te verslepen"
-
-#: data/com.github.lainsce.coin.appdata.xml:14
-msgid "Stays out of your way in the desktop"
-msgstr "Zit niet in de weg op je bureaublad"
-
-#: data/com.github.lainsce.coin.appdata.xml:20
-msgid "Lains"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:60
-msgid "Release: Spanish Peso"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:62
-msgid "Added translations into Spanish, French, Japanese, Dutch, and Catalan."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:63
-msgid "Minor fixes."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:69
-msgid "Release: Ticker Ticking"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:71
-msgid "A new change of value ticker for the day."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:72
-msgid "Added Bitcoin Cash virtual currency."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:78
-msgid "Release: 1 2 3, hello Juno!"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:80
-msgid "Some Translations."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:86
-msgid "Release: Worldwide Assets"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:88
-msgid "The names of the currencies are now translatable."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:94
-msgid "Release: Minor Payments"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:96
-msgid "Minor fixes all around."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:102
-msgid "Release: High Definition Money"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:104
-msgid "Made the layout of the app more simple."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:105
-msgid "Uses the full names of the coins &amp; currencies now."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:106
-msgid "Adds support for high definition icons."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:112
-msgid "Release: Reinjecting the Assets"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:114
-msgid "Remembers the pair of currency &amp; coin that you chose."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:115
-msgid "Minor fixes to make Coin more aesthetically appealing."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:121
-msgid "Release: Olá, Brasil!"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:123
-msgid "Add Brazilian Portuguese translations."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:129
-msgid "Release: Style My Assets, Sir!"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:131
-msgid "Use GResources to load the GTK CSS Styling"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:137
-msgid "Release: Money Makes The World Go Round"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:139
-msgid "Enable Coin for translators"
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:140
-msgid "Add XAR coin."
-msgstr ""
-
-#: data/com.github.lainsce.coin.appdata.xml:141
-#, fuzzy
-msgid "Add South African Rand (ZAR)."
-msgstr "Zuid-Afrikaanse rand"
-
-#: data/com.github.lainsce.coin.desktop:4
-#, fuzzy
-msgid "Track the virtual currencies in real world currency value"
-msgstr "Houd de virtuele valuta in echte valutawaarde bij met deze handige app"
-
-#: data/com.github.lainsce.coin.desktop:8
-msgid "com.github.lainsce.coin"
-msgstr ""
-
-#: data/com.github.lainsce.coin.desktop:9
-msgid "Money;Finance;Tracker;Bitcoin;Cryptocurrency;"
-msgstr ""
-
-#~ msgid "Failed to connect to service: %s"
-#~ msgstr "Kan niet verbinden met dienst: %s"
