@@ -24,7 +24,7 @@ msgstr "Coin"
 
 #: data/com.github.lainsce.coin.desktop.in:4
 msgid "Track the virtual currencies in real world currency value"
-msgstr "Suivez les devises virtuelles en valeur mondiale réelle"
+msgstr "Suivez le cours des monnaies virtuelles en valeur mondiale réelle"
 
 #: data/com.github.lainsce.coin.desktop.in:6
 msgid "com.github.lainsce.coin"
@@ -47,7 +47,7 @@ msgid ""
 "Track the virtual currencies in real world currency value with this handy "
 "applet"
 msgstr ""
-"Suivez les devises virtuelles en valeur réelle avec cette application "
+"Suivez le cours des monnaies virtuelles en valeur réelle avec cette application "
 "pratique"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:11
