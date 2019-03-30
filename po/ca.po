@@ -1,15 +1,15 @@
 # Catalan translations for com.github.lainsce.coin package.
 # Copyright (C) 2019 THE com.github.lainsce.coin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.lainsce.coin package.
-# Automatically generated, 2019.
+# Adolfo Jayme Barrientos, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 11:25+0100\n"
+"POT-Creation-Date: 2019-03-30 11:33+0100\n"
 "PO-Revision-Date: 2019-03-30 11:25+0100\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: none\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -18,48 +18,48 @@ msgstr ""
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
-msgstr ""
+msgstr "Dòlar estatunidenc"
 
 #: src/MainWindow.vala:73
 msgid "Euro"
-msgstr ""
+msgstr "Euro"
 
 #: src/MainWindow.vala:74
 msgid "British Pound"
-msgstr ""
+msgstr "Lliura esterlina"
 
 #: src/MainWindow.vala:75
 msgid "Australian Dollar"
-msgstr ""
+msgstr "Dòlar australià"
 
 #: src/MainWindow.vala:76
 msgid "Brazilian Real"
-msgstr ""
+msgstr "Real brasiler"
 
 #: src/MainWindow.vala:77
 msgid "Canadian Dollar"
-msgstr ""
+msgstr "Dòlar canadenc"
 
 #: src/MainWindow.vala:78
 msgid "Chinese Yuan"
-msgstr ""
+msgstr "Iuan xinès"
 
 #: src/MainWindow.vala:79
 msgid "Indian Rupee"
-msgstr ""
+msgstr "Rupia índia"
 
 #: src/MainWindow.vala:80
 msgid "Japanese Yen"
-msgstr ""
+msgstr "Ien japonès"
 
 #: src/MainWindow.vala:81
 msgid "Russian Ruble"
-msgstr ""
+msgstr "Ruble rus"
 
 #: src/MainWindow.vala:82
 msgid "S. African Rand"
-msgstr ""
+msgstr "Rand sud-africà"
 
 #: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
-msgstr ""
+msgstr "S’actualitza cada 10 segons"

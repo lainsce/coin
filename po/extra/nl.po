@@ -1,15 +1,15 @@
 # Dutch translations for extra package.
 # Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2019.
+# Heimen Stoffels, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 11:25+0100\n"
+"POT-Creation-Date: 2019-03-30 12:31+0100\n"
 "PO-Revision-Date: 2019-03-30 11:25+0100\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
 "Language-Team: none\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: data/com.github.lainsce.coin.desktop.in:3
 #: data/com.github.lainsce.coin.appdata.xml.in:6
 msgid "Coin"
-msgstr ""
+msgstr "Coin"
 
 #: data/com.github.lainsce.coin.desktop.in:4
 msgid "Track the virtual currencies in real world currency value"
@@ -39,28 +39,29 @@ msgid ""
 "Never miss out on the monetary value of a virtual currency with this handy "
 "applet"
 msgstr ""
+"Mis nooit meer de financiële waarde van virtuele valuta met deze handige app"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:9
 msgid ""
 "Track the virtual currencies in real world currency value with this handy "
 "applet"
-msgstr ""
+msgstr "Houd de virtuele valuta in echte valutawaarde bij met deze handige app"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:11
 msgid "Choose which currency and virtual currency to use for tracking"
-msgstr ""
+msgstr "Kies welke valuta en virtuele valuta je wilt bijhouden"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:12
 msgid "Quit anytime with the shortcut Ctrl + Q"
-msgstr ""
+msgstr "Sluit af met Ctrl + Q"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:13
 msgid "Move the applet by dragging it from anywhere in the window"
-msgstr ""
+msgstr "Verplaats het venster door het van waar dan ook te verslepen"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:14
 msgid "Stays out of your way in the desktop"
-msgstr ""
+msgstr "Zit niet in de weg op je bureaublad"
 
 #: data/com.github.lainsce.coin.appdata.xml.in:20
 msgid "Lains"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 11:25+0100\n"
+"POT-Creation-Date: 2019-03-30 11:33+0100\n"
 "PO-Revision-Date: 2019-03-30 11:25+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,48 +19,48 @@ msgstr ""
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
-msgstr ""
+msgstr "米ドル"
 
 #: src/MainWindow.vala:73
 msgid "Euro"
-msgstr ""
+msgstr "ユーロ"
 
 #: src/MainWindow.vala:74
 msgid "British Pound"
-msgstr ""
+msgstr "イギリス・ポンド"
 
 #: src/MainWindow.vala:75
 msgid "Australian Dollar"
-msgstr ""
+msgstr "オーストラリア・ドル"
 
 #: src/MainWindow.vala:76
 msgid "Brazilian Real"
-msgstr ""
+msgstr "ブラジル・レアル"
 
 #: src/MainWindow.vala:77
 msgid "Canadian Dollar"
-msgstr ""
+msgstr "カナダ・ドル"
 
 #: src/MainWindow.vala:78
 msgid "Chinese Yuan"
-msgstr ""
+msgstr "人民元"
 
 #: src/MainWindow.vala:79
 msgid "Indian Rupee"
-msgstr ""
+msgstr "インド・ルピー"
 
 #: src/MainWindow.vala:80
 msgid "Japanese Yen"
-msgstr ""
+msgstr "日本円"
 
 #: src/MainWindow.vala:81
 msgid "Russian Ruble"
-msgstr ""
+msgstr "ロシアルーブル"
 
 #: src/MainWindow.vala:82
 msgid "S. African Rand"
-msgstr ""
+msgstr "南アフリカランド"
 
 #: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
-msgstr ""
+msgstr "10秒ごとに更新"

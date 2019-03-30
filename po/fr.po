@@ -1,16 +1,16 @@
 # French translations for com.github.lainsce.coin package.
 # Copyright (C) 2019 THE com.github.lainsce.coin'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the com.github.lainsce.coin package.
-# Automatically generated, 2019.
+# NathanBnm, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: com.github.lainsce.coin\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 11:25+0100\n"
+"POT-Creation-Date: 2019-03-30 11:33+0100\n"
 "PO-Revision-Date: 2019-03-30 11:25+0100\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"Last-Translator: NathanBnm\n"
+"Language-Team: Français\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,48 +19,48 @@ msgstr ""
 
 #: src/MainWindow.vala:72
 msgid "US Dollar"
-msgstr ""
+msgstr "Dollar américain"
 
 #: src/MainWindow.vala:73
 msgid "Euro"
-msgstr ""
+msgstr "Euro"
 
 #: src/MainWindow.vala:74
 msgid "British Pound"
-msgstr ""
+msgstr "Livre sterling"
 
 #: src/MainWindow.vala:75
 msgid "Australian Dollar"
-msgstr ""
+msgstr "Dollar australien"
 
 #: src/MainWindow.vala:76
 msgid "Brazilian Real"
-msgstr ""
+msgstr "Real brésilien"
 
 #: src/MainWindow.vala:77
 msgid "Canadian Dollar"
-msgstr ""
+msgstr "Dollar canadien"
 
 #: src/MainWindow.vala:78
 msgid "Chinese Yuan"
-msgstr ""
+msgstr "Yuan chinois"
 
 #: src/MainWindow.vala:79
 msgid "Indian Rupee"
-msgstr ""
+msgstr "Roupie indienne"
 
 #: src/MainWindow.vala:80
 msgid "Japanese Yen"
-msgstr ""
+msgstr "Yen japonais"
 
 #: src/MainWindow.vala:81
 msgid "Russian Ruble"
-msgstr ""
+msgstr "Rouble russe"
 
 #: src/MainWindow.vala:82
 msgid "S. African Rand"
-msgstr ""
+msgstr "Rand sud-africain"
 
 #: src/MainWindow.vala:170
 msgid "Updated every 10 seconds"
-msgstr ""
+msgstr "Actualisé toutes les 10 secondes"

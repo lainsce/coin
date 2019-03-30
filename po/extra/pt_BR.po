@@ -1,15 +1,15 @@
 # Portuguese translations for extra package.
 # Copyright (C) 2019 THE extra'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the extra package.
-# Automatically generated, 2019.
+# Lains, 2019.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: extra\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-30 11:25+0100\n"
+"POT-Creation-Date: 2019-03-30 12:31+0100\n"
 "PO-Revision-Date: 2019-03-30 11:25+0100\n"
-"Last-Translator: Automatically generated\n"
+"Last-Translator: Lains <lainsce@airmail.cc>\n"
 "Language-Team: none\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr ""
 
 #: data/com.github.lainsce.coin.desktop.in:4
 msgid "Track the virtual currencies in real world currency value"
-msgstr ""
+msgstr "Rastreie moedas virtuais em valor de moedas mundiais"
 
 #: data/com.github.lainsce.coin.desktop.in:6
 msgid "com.github.lainsce.coin"
