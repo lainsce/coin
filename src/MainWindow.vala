@@ -160,7 +160,7 @@ namespace Coin {
             } else if (settings.virtualcoin == 8) {
                 base_vcurrency.set_active(8);
                 vcoin_iso = "BCH";
-            { else if (settings.virtualcoin == 9) {
+            } else if (settings.virtualcoin == 9) {
                 base_vcurrency.set_active(9);
                 vcoin_iso = "ADA";
             } else {
