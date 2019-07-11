@@ -55,6 +55,14 @@
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <releases>
+      <release version="1.2.6" date="2019-07-11">
+          <description>
+              <p>Release: Cardano ADA</p>
+              <ul>
+                  <li>Added Cardano ADA virtual currency.</li>
+              </ul>
+          </description>
+      </release>
       <release version="1.2.5" date="2019-03-15">
           <description>
               <p>Release: Spanish Peso</p>
