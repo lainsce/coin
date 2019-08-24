@@ -36,3 +36,8 @@ meson build && cd build
 meson configure -Dprefix=/usr
 sudo ninja install
 ```
+
+## Installation
+
+- [Flathub](https://flathub.org/apps/details/com.github.lainsce.coin): `flatpak install flathub com.github.lainsce.coin`
+- [Fedora](https://apps.fedoraproject.org/packages/coin): `sudo dnf install coin`
