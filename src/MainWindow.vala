@@ -131,6 +131,7 @@ namespace Coin {
             base_vcurrency.append_text("Monero");
             base_vcurrency.append_text("Bitcoin Cash");
             base_vcurrency.append_text("Cardano");
+            base_vcurrency.append_text("Tezos");
             base_vcurrency.margin = 6;
 
             if (settings.virtualcoin == 0) {
@@ -163,6 +164,9 @@ namespace Coin {
             } else if (settings.virtualcoin == 9) {
                 base_vcurrency.set_active(9);
                 vcoin_iso = "ADA";
+            } else if (settings.virtualcoin == 10) {
+                base_vcurrency.set_active(10);
+                vcoin_iso = "XTZ";
             } else {
                 base_vcurrency.set_active(0);
                 vcoin_iso = "BTC";
@@ -361,6 +365,8 @@ namespace Coin {
                 vcoin_iso = "BCH";
             } else if (settings.virtualcoin == 9){
                 vcoin_iso = "ADA";
+            } else if (settings.virtualcoin == 10){
+                vcoin_iso = "XTZ";
             }
             debug ("Chose %s".printf(vcoin_iso));
 
@@ -455,6 +461,9 @@ namespace Coin {
                     break;
                 case 9:
                     vcurr_symbol = "ADA";
+                    break;
+                case 10:
+                    vcurr_symbol = "XTZ";
                     break;
                 default:
                     curr_symbol = "¬";
