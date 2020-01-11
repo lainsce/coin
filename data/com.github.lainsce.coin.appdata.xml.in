@@ -55,6 +55,16 @@
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <releases>
+      <release version="1.2.7" date="2020-01-15">
+          <description>
+              <p>Release: Italian Lire</p>
+              <ul>
+                  <li>Added translations into Turkish.</li>
+                  <li>Updated translations into Dutch, French.</li>
+                  <li>Added Cardano and Tezos currencies.</li>
+              </ul>
+          </description>
+      </release>
       <release version="1.2.5" date="2019-03-15">
           <description>
               <p>Release: Spanish Peso</p>
