@@ -54,16 +54,11 @@ namespace Coin {
             var titlebar = new Gtk.HeaderBar ();
             titlebar.has_subtitle = false;
             titlebar.show_close_button = true;
-
-
             var titlebar_style_context = titlebar.get_style_context ();
             titlebar_style_context.add_class (Gtk.STYLE_CLASS_FLAT);
             titlebar_style_context.add_class ("default-decoration");
             titlebar_style_context.add_class ("coin-toolbar");
-
             this.set_titlebar (titlebar);
-
-            var settings = AppSettings.get_default ();
             this.get_style_context ().add_class ("rounded");
 
             var icon = new Gtk.Image.from_icon_name ("com.github.lainsce.coin-symbolic", Gtk.IconSize.DIALOG);
@@ -82,43 +77,7 @@ namespace Coin {
             base_currency.append_text(_("S. African Rand"));
             base_currency.margin = 6;
 
-            if (settings.coin == 0) {
-                base_currency.set_active(0);
-                coin_iso = "USD";
-            } else if (settings.coin == 1) {
-                base_currency.set_active(1);
-                coin_iso = "EUR";
-            } else if (settings.coin == 2) {
-                base_currency.set_active(2);
-                coin_iso = "GBP";
-            } else if (settings.coin == 3) {
-                base_currency.set_active(3);
-                coin_iso = "AUD";
-            } else if (settings.coin == 4) {
-                base_currency.set_active(4);
-                coin_iso = "BRL";
-            } else if (settings.coin == 5) {
-                base_currency.set_active(5);
-                coin_iso = "CAD";
-            } else if (settings.coin == 6) {
-                base_currency.set_active(6);
-                coin_iso = "CNY";
-            } else if (settings.coin == 7) {
-                base_currency.set_active(7);
-                coin_iso = "INR";
-            } else if (settings.coin == 8) {
-                base_currency.set_active(8);
-                coin_iso = "JPY";
-            } else if (settings.coin == 9) {
-                base_currency.set_active(9);
-                coin_iso = "RUB";
-            } else if (settings.coin == 10) {
-                base_currency.set_active(10);
-                coin_iso = "ZAR";
-            } else {
-                base_currency.set_active(0);
-                coin_iso = "USD";
-            }
+            base_currency.set_active(Coin.Application.gsettings.get_int("coin"));
 
             base_vcurrency = new Gtk.ComboBoxText();
             base_vcurrency.append_text("Bitcoin");
@@ -134,43 +93,7 @@ namespace Coin {
             base_vcurrency.append_text("Tezos");
             base_vcurrency.margin = 6;
 
-            if (settings.virtualcoin == 0) {
-                base_vcurrency.set_active(0);
-                vcoin_iso = "BTC";
-            } else if (settings.virtualcoin == 1) {
-                base_vcurrency.set_active(1);
-                vcoin_iso = "DASH";
-            } else if (settings.virtualcoin == 2) {
-                base_vcurrency.set_active(2);
-                vcoin_iso = "ETH";
-            } else if (settings.virtualcoin == 3) {
-                base_vcurrency.set_active(3);
-                vcoin_iso = "LTC";
-            } else if (settings.virtualcoin == 4) {
-                base_vcurrency.set_active(4);
-                vcoin_iso = "PPC";
-            } else if (settings.virtualcoin == 5) {
-                base_vcurrency.set_active(5);
-                vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == 6) {
-                base_vcurrency.set_active(6);
-                vcoin_iso = "ZEC";
-            } else if (settings.virtualcoin == 7) {
-                base_vcurrency.set_active(7);
-                vcoin_iso = "XMR";
-            } else if (settings.virtualcoin == 8) {
-                base_vcurrency.set_active(8);
-                vcoin_iso = "BCH";
-            } else if (settings.virtualcoin == 9) {
-                base_vcurrency.set_active(9);
-                vcoin_iso = "ADA";
-            } else if (settings.virtualcoin == 10) {
-                base_vcurrency.set_active(10);
-                vcoin_iso = "XTZ";
-            } else {
-                base_vcurrency.set_active(0);
-                vcoin_iso = "BTC";
-            }
+            base_currency.set_active(Coin.Application.gsettings.get_int("virtualcoin"));
 
             label_result = new Gtk.Label ("");
             label_result.set_halign (Gtk.Align.END);
@@ -224,9 +147,11 @@ namespace Coin {
             stack.margin_top = 0;
             stack.homogeneous = true;
             stack.add_named (grid, "money");
-
             this.add (stack);
             stack.show_all ();
+
+            get_values ();
+            set_labels ();
 
             base_currency.changed.connect (() => {
                 get_values ();
@@ -279,12 +204,12 @@ namespace Coin {
                 }
             });
 
-            int x = settings.window_x;
-            int y = settings.window_y;
+            int x = Coin.Application.gsettings.get_int("window-x");
+            int y = Coin.Application.gsettings.get_int("window-y");
             int coin = base_currency.get_active();
-            coin = settings.coin;
+            coin = Coin.Application.gsettings.get_int("coin");
             int vcoin = base_vcurrency.get_active();
-            vcoin = settings.virtualcoin;
+            vcoin = Coin.Application.gsettings.get_int("virtualcoin");
 
             if (x != -1 && y != -1) {
                 move (x, y);
@@ -303,39 +228,48 @@ namespace Coin {
             int x, y;
             get_position (out x, out y);
 
-            var settings = AppSettings.get_default ();
-            settings.window_x = x;
-            settings.window_y = y;
-            settings.coin = base_currency.get_active();
-            settings.virtualcoin = base_vcurrency.get_active();
+            Coin.Application.gsettings.set_int("window-x", x);
+            Coin.Application.gsettings.set_int("window-y", y);
+            Coin.Application.gsettings.set_int("coin", base_currency.get_active());
+            Coin.Application.gsettings.set_int("virtualcoin", base_vcurrency.get_active());
 
             return false;
         }
 
         public bool get_values () {
-            var settings = AppSettings.get_default ();
-            settings.coin = base_currency.get_active();
-            if (settings.coin == 0) {
+            Coin.Application.gsettings.set_int("coin", base_currency.get_active());
+            if (Coin.Application.gsettings.get_int("coin") == 0) {
+                base_currency.set_active(0);
                 coin_iso = "USD";
-            } else if (settings.coin == 1) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 1) {
+                base_currency.set_active(1);
                 coin_iso = "EUR";
-            } else if (settings.coin == 2) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 2) {
+                base_currency.set_active(2);
                 coin_iso = "GBP";
-            } else if (settings.coin == 3) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 3) {
+                base_currency.set_active(3);
                 coin_iso = "AUD";
-            } else if (settings.coin == 4) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 4) {
+                base_currency.set_active(4);
                 coin_iso = "BRL";
-            } else if (settings.coin == 5) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 5) {
+                base_currency.set_active(5);
                 coin_iso = "CAD";
-            } else if (settings.coin == 6) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 6) {
+                base_currency.set_active(6);
                 coin_iso = "CNY";
-            } else if (settings.coin == 7) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 7) {
+                base_currency.set_active(7);
                 coin_iso = "INR";
-            } else if (settings.coin == 8) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 8) {
+                base_currency.set_active(8);
                 coin_iso = "JPY";
-            } else if (settings.coin == 9) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 9) {
+                base_currency.set_active(9);
                 coin_iso = "RUB";
-            } else if (settings.coin == 10) {
+            } else if (Coin.Application.gsettings.get_int("coin") == 10) {
+                base_currency.set_active(10);
                 coin_iso = "ZAR";
             } else {
                 base_currency.set_active(0);
@@ -344,30 +278,45 @@ namespace Coin {
 
             debug ("Chose %s".printf(coin_iso));
 
-            settings.virtualcoin = base_vcurrency.get_active();
-            if (settings.virtualcoin == 0) {
+            Coin.Application.gsettings.set_int("virtualcoin", base_vcurrency.get_active());
+            if (Coin.Application.gsettings.get_int("virtualcoin") == 0) {
+                base_vcurrency.set_active(0);
                 vcoin_iso = "BTC";
-            } else if (settings.virtualcoin == 1) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 1) {
+                base_vcurrency.set_active(1);
                 vcoin_iso = "DASH";
-            } else if (settings.virtualcoin == 2) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 2) {
+                base_vcurrency.set_active(2);
                 vcoin_iso = "ETH";
-            } else if (settings.virtualcoin == 3) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 3) {
+                base_vcurrency.set_active(3);
                 vcoin_iso = "LTC";
-            } else if (settings.virtualcoin == 4) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 4) {
+                base_vcurrency.set_active(4);
                 vcoin_iso = "PPC";
-            } else if (settings.virtualcoin == 5) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 5) {
+                base_vcurrency.set_active(5);
                 vcoin_iso = "XRP";
-            } else if (settings.virtualcoin == 6) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 6) {
+                base_vcurrency.set_active(6);
                 vcoin_iso = "ZEC";
-            } else if (settings.virtualcoin == 7) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 7) {
+                base_vcurrency.set_active(7);
                 vcoin_iso = "XMR";
-            } else if (settings.virtualcoin == 8) {
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 8) {
+                base_vcurrency.set_active(8);
                 vcoin_iso = "BCH";
-            } else if (settings.virtualcoin == 9){
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 9){
+                base_vcurrency.set_active(9);
                 vcoin_iso = "ADA";
-            } else if (settings.virtualcoin == 10){
+            } else if (Coin.Application.gsettings.get_int("virtualcoin") == 10){
+                base_vcurrency.set_active(10);
                 vcoin_iso = "XTZ";
+            } else {
+                base_vcurrency.set_active(0);
+                coin_iso = "BTC";
             }
+
             debug ("Chose %s".printf(vcoin_iso));
 
             var uri = """https://min-api.cryptocompare.com/data/pricemultifull?fsyms=%s&tsyms=%s""".printf(vcoin_iso, coin_iso);
@@ -393,10 +342,9 @@ namespace Coin {
         }
 
         public void set_labels () {
-            var settings = AppSettings.get_default ();
             var curr_symbol = "";
-            settings.coin = base_currency.get_active();
-            switch (settings.coin) {
+            Coin.Application.gsettings.set_int("coin", base_currency.get_active());
+            switch (Coin.Application.gsettings.get_int("coin")) {
                 case 4:
                     curr_symbol = "R$";
                     break;
@@ -430,8 +378,8 @@ namespace Coin {
             }
 
             var vcurr_symbol = "";
-            settings.virtualcoin = base_vcurrency.get_active();
-            switch (settings.virtualcoin) {
+            Coin.Application.gsettings.set_int("virtualcoin", base_vcurrency.get_active());
+            switch (Coin.Application.gsettings.get_int("virtualcoin")) {
                 case 0:
                     vcurr_symbol = "₿";
                     break;

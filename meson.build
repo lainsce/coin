@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.coin', ['vala', 'c'],
-    version: '1.2.7'
+    version: '1.2.8'
 )
 
 # Import main lib files
@@ -44,7 +44,6 @@ executable(
     meson.project_name(),
     'src/Application.vala',
     'src/MainWindow.vala',
-    'src/Constants/AppSettings.vala',
     asresources,
     c_args: c_args,
     dependencies: [

@@ -55,6 +55,14 @@
         <content_attribute id="money-gambling">none</content_attribute>
     </content_rating>
     <releases>
+      <release version="1.2.8" date="2020-01-30">
+          <description>
+              <p>Release: Greek Drachma</p>
+              <ul>
+                  <li>Minor backend fixes.</li>
+              </ul>
+          </description>
+      </release>
       <release version="1.2.7" date="2020-01-15">
           <description>
               <p>Release: Italian Lire</p>
