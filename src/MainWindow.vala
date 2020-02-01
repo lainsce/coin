@@ -75,6 +75,7 @@ namespace Coin {
             base_currency.append_text(_("Japanese Yen"));
             base_currency.append_text(_("Russian Ruble"));
             base_currency.append_text(_("S. African Rand"));
+            base_currency.append_text(_("Hungarian Forint"));
             base_currency.margin = 6;
 
             base_currency.set_active(Coin.Application.gsettings.get_int("coin"));
@@ -89,7 +90,7 @@ namespace Coin {
             base_vcurrency.append_text("ZCash");
             base_vcurrency.append_text("Monero");
             base_vcurrency.append_text("Bitcoin Cash");
-            base_vcurrency.append_text("Cardano");
+            base_vcurrency.append_text("Cardano Ada");
             base_vcurrency.append_text("Tezos");
             base_vcurrency.margin = 6;
 
@@ -271,6 +272,9 @@ namespace Coin {
             } else if (Coin.Application.gsettings.get_int("coin") == 10) {
                 base_currency.set_active(10);
                 coin_iso = "ZAR";
+            } else if (Coin.Application.gsettings.get_int("coin") == 11) {
+                base_currency.set_active(11);
+                coin_iso = "HUF";
             } else {
                 base_currency.set_active(0);
                 coin_iso = "USD";
@@ -345,17 +349,14 @@ namespace Coin {
             var curr_symbol = "";
             Coin.Application.gsettings.set_int("coin", base_currency.get_active());
             switch (Coin.Application.gsettings.get_int("coin")) {
-                case 4:
-                    curr_symbol = "R$";
-                    break;
-                case 10:
-                    curr_symbol = "R";
-                    break;
                 case 1:
                     curr_symbol = "€";
                     break;
                 case 2:
                     curr_symbol = "£";
+                    break;
+                case 4:
+                    curr_symbol = "R$";
                     break;
                 case 0:
                 case 3:
@@ -366,11 +367,17 @@ namespace Coin {
                 case 6:
                     curr_symbol = "¥";
                     break;
+                case 7:
+                    curr_symbol = "₹";
+                    break;
                 case 9:
                     curr_symbol = "₽";
                     break;
-                case 7:
-                    curr_symbol = "₹";
+                case 10:
+                    curr_symbol = "R";
+                    break;
+                case 11:
+                    curr_symbol = "ቂ";
                     break;
                 default:
                     curr_symbol = "¤";
@@ -405,13 +412,13 @@ namespace Coin {
                     vcurr_symbol = "ɱ";
                     break;
                 case 8:
-                    vcurr_symbol = "BC";
+                    vcurr_symbol = "Ƀ";
                     break;
                 case 9:
-                    vcurr_symbol = "ADA";
+                    vcurr_symbol = "₳";
                     break;
                 case 10:
-                    vcurr_symbol = "XTZ";
+                    vcurr_symbol = "ꜩ";
                     break;
                 default:
                     curr_symbol = "¬";

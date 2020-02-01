@@ -1,6 +1,6 @@
 # Name our project
 project('com.github.lainsce.coin', ['vala', 'c'],
-    version: '1.2.8'
+    version: '1.3.0'
 )
 
 # Import main lib files
